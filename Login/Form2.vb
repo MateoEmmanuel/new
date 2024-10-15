@@ -1,8 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports ConnectionModule
-
-Public Class Form1
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+Public Class Form2
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Create a new TableLayoutPanel and set Dock to fill the form
         Dim tableLayoutPanel As New TableLayoutPanel()
         tableLayoutPanel.Dock = DockStyle.Fill
@@ -37,12 +36,25 @@ Public Class Form1
         DbConnect() ' Ensure the connection is established when the form loads
     End Sub
 
-    Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
+    Private Sub btnexit_Click(sender As Object, e As EventArgs) Handles btnexit.Click
+        ' Ensure the connection is closed
+        If conn IsNot Nothing AndAlso conn.State = ConnectionState.Open Then
+            conn.Close()
+        End If
+        Dim login As New Form1()
+        login.Show() ' Show Form1
+        Me.Close() ' Hide Form2
+    End Sub
+
+    Private Sub btncreate_Click(sender As Object, e As EventArgs) Handles btncreate.Click
         Dim username As String = txtuname.Text.Trim()
         Dim password As String = txtpassword.Text.Trim()
+        Dim fname As String = txtFname.Text.Trim()
+        Dim lname As String = txtLname.Text.Trim()
+        Dim id As String = txtID.Text.Trim()
 
-        If username = "" OrElse password = "" Then
-            MsgBox("Username or Password is Incorrect, Please Try Again!")
+        If username = "" OrElse password = "" OrElse fname = "" OrElse lname = "" OrElse id = "" Then
+            MsgBox("Error! Please answer everything and don't leave any blanks")
             Return
         End If
 
@@ -52,23 +64,24 @@ Public Class Form1
                 DbConnect()
             End If
 
-            Dim query As String = "SELECT * FROM Login WHERE username=@username AND pword=@pword"
+            Dim query As String = "insert into accounts (username,pword,fname,lname,ID) values (@username,@pword,@fname,@lname,@ID); insert into Login (username,pword,ID) values (@username,@pword,@ID)"
             Dim logging As New MySqlCommand(query, conn)
 
             ' Add parameters to the command
             logging.Parameters.AddWithValue("@username", username)
             logging.Parameters.AddWithValue("@pword", password)
+            logging.Parameters.AddWithValue("@fname", fname)
+            logging.Parameters.AddWithValue("@lname", lname)
+            logging.Parameters.AddWithValue("@ID", id)
 
-            ' Execute the query
-            Dim reader As MySqlDataReader = logging.ExecuteReader()
-            If reader.HasRows Then
-                MsgBox("Welcome " & username)
-                txtpassword.Clear()
-                txtuname.Clear()
+            ' adding to mysql database
+            Dim rowsAffected As Integer = logging.ExecuteNonQuery()
+            If rowsAffected > 0 Then
+                MsgBox("Account created successfully! " & username & " " & password & " " & lname & "," & fname & " " & id)
             Else
-                MsgBox("Username or Password is Incorrect, Please Try Again!")
+                MsgBox("Account creation failed!")
             End If
-            reader.Close() ' Close the reader
+            logging.Dispose()
         Catch ex As MySqlException
             MsgBox("Database Error: " & ex.Message)
         Catch ex As Exception
@@ -79,24 +92,5 @@ Public Class Form1
                 conn.Close()
             End If
         End Try
-    End Sub
-
-    Private Sub btncreate_Click(sender As Object, e As EventArgs) Handles btncreate.Click
-        ' Ensure the connection is closed
-        If conn IsNot Nothing AndAlso conn.State = ConnectionState.Open Then
-            conn.Close()
-        End If
-
-        Dim create As New Form2()
-        create.Show() ' Open Form2 for account creation
-        Me.Hide() ' Hide Form1
-    End Sub
-
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
-
-    Private Sub btnclose_Click(sender As Object, e As EventArgs) Handles btnclose.Click
-        Application.Exit()
     End Sub
 End Class

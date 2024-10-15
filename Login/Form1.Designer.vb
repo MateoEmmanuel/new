@@ -22,15 +22,15 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtusername = New System.Windows.Forms.TextBox()
+        Me.txtuname = New System.Windows.Forms.TextBox()
         Me.username = New System.Windows.Forms.Label()
         Me.password = New System.Windows.Forms.Label()
         Me.btnlogin = New System.Windows.Forms.Button()
         Me.welcome = New System.Windows.Forms.Label()
         Me.txtpassword = New System.Windows.Forms.TextBox()
-        Me.btnforgot = New System.Windows.Forms.Button()
+        Me.btncreate = New System.Windows.Forms.Button()
+        Me.btnclose = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,13 +43,14 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.50488!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.08187!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.371709!))
-        Me.TableLayoutPanel1.Controls.Add(Me.txtusername, 3, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtuname, 3, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.username, 2, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.password, 2, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.btnlogin, 3, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.welcome, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.txtpassword, 3, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnforgot, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.btncreate, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnclose, 3, 6)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -68,14 +69,14 @@ Partial Class Form1
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
         Me.TableLayoutPanel1.TabIndex = 0
         '
-        'txtusername
+        'txtuname
         '
-        Me.txtusername.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtusername.Font = New System.Drawing.Font("Yeseva One", 16.0!)
-        Me.txtusername.Location = New System.Drawing.Point(535, 191)
-        Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(242, 32)
-        Me.txtusername.TabIndex = 15
+        Me.txtuname.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtuname.Font = New System.Drawing.Font("Yeseva One", 15.75!)
+        Me.txtuname.Location = New System.Drawing.Point(535, 191)
+        Me.txtuname.Name = "txtuname"
+        Me.txtuname.Size = New System.Drawing.Size(242, 32)
+        Me.txtuname.TabIndex = 15
         '
         'username
         '
@@ -143,22 +144,37 @@ Partial Class Form1
         Me.txtpassword.Size = New System.Drawing.Size(242, 32)
         Me.txtpassword.TabIndex = 18
         '
-        'btnforgot
+        'btncreate
         '
-        Me.btnforgot.AutoSize = True
-        Me.btnforgot.BackColor = System.Drawing.Color.Transparent
-        Me.btnforgot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnforgot.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btnforgot.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnforgot.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnforgot.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btnforgot.Location = New System.Drawing.Point(437, 257)
-        Me.btnforgot.MaximumSize = New System.Drawing.Size(0, 35)
-        Me.btnforgot.Name = "btnforgot"
-        Me.btnforgot.Size = New System.Drawing.Size(92, 29)
-        Me.btnforgot.TabIndex = 22
-        Me.btnforgot.Text = "Forgot"
-        Me.btnforgot.UseVisualStyleBackColor = False
+        Me.btncreate.AutoSize = True
+        Me.btncreate.BackColor = System.Drawing.Color.Transparent
+        Me.btncreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btncreate.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btncreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btncreate.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncreate.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.btncreate.Location = New System.Drawing.Point(438, 257)
+        Me.btncreate.MaximumSize = New System.Drawing.Size(0, 35)
+        Me.btncreate.Name = "btncreate"
+        Me.btncreate.Size = New System.Drawing.Size(91, 29)
+        Me.btncreate.TabIndex = 22
+        Me.btncreate.Text = "Create"
+        Me.btncreate.UseVisualStyleBackColor = False
+        '
+        'btnclose
+        '
+        Me.btnclose.AutoSize = True
+        Me.btnclose.BackColor = System.Drawing.Color.Transparent
+        Me.btnclose.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnclose.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnclose.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.btnclose.Location = New System.Drawing.Point(535, 413)
+        Me.btnclose.Name = "btnclose"
+        Me.btnclose.Size = New System.Drawing.Size(242, 34)
+        Me.btnclose.TabIndex = 23
+        Me.btnclose.Text = "Close"
+        Me.btnclose.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -168,9 +184,10 @@ Partial Class Form1
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Navy
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.Login.My.Resources.Resources.image_removebg_preview2
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.DoubleBuffered = True
@@ -189,11 +206,12 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents txtusername As TextBox
+    Friend WithEvents txtuname As TextBox
     Friend WithEvents txtpassword As TextBox
     Friend WithEvents username As Label
     Friend WithEvents welcome As Label
     Friend WithEvents password As Label
     Friend WithEvents btnlogin As Button
-    Friend WithEvents btnforgot As Button
+    Friend WithEvents btncreate As Button
+    Friend WithEvents btnclose As Button
 End Class
