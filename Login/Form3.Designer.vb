@@ -33,6 +33,7 @@ Partial Class Form3
         Me.BackgroundImage = Global.Login.My.Resources.Resources.image_removebg_preview2
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Form3"
         Me.Text = "Form3"
