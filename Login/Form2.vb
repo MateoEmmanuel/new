@@ -64,7 +64,7 @@ Public Class Form2
                 DbConnect()
             End If
 
-            Dim query As String = "insert into accounts (username,pword,fname,lname,ID) values (@username,@pword,@fname,@lname,@ID); insert into Login (username,pword,ID) values (@username,@pword,@ID)"
+            Dim query As String = "insert into accounts (username,pword,fname,lname,ID,accesslevel) values (@username,@pword,@fname,@lname,@ID,'Low');"
             Dim logging As New MySqlCommand(query, conn)
 
             ' Add parameters to the command
@@ -78,6 +78,11 @@ Public Class Form2
             Dim rowsAffected As Integer = logging.ExecuteNonQuery()
             If rowsAffected > 0 Then
                 MsgBox("Account created successfully! " & username & " " & password & " " & lname & "," & fname & " " & id)
+                txtuname.Clear()
+                txtpassword.Clear()
+                txtFname.Clear()
+                txtLname.Clear()
+                txtID.Clear()
             Else
                 MsgBox("Account creation failed!")
             End If

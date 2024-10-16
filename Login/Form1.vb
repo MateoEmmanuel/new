@@ -52,23 +52,49 @@ Public Class Form1
                 DbConnect()
             End If
 
-            Dim query As String = "SELECT * FROM Login WHERE username=@username AND pword=@pword"
-            Dim logging As New MySqlCommand(query, conn)
+            ' Combine the login and account level query in one
+            Dim query As String = "SELECT accesslevel FROM accounts WHERE username=@username AND pword=@pword"
+            Dim command As New MySqlCommand(query, conn)
 
             ' Add parameters to the command
-            logging.Parameters.AddWithValue("@username", username)
-            logging.Parameters.AddWithValue("@pword", password)
+            command.Parameters.AddWithValue("@username", username)
+            command.Parameters.AddWithValue("@pword", password)
 
-            ' Execute the query
-            Dim reader As MySqlDataReader = logging.ExecuteReader()
-            If reader.HasRows Then
-                MsgBox("Welcome " & username)
-                txtpassword.Clear()
-                txtuname.Clear()
-            Else
-                MsgBox("Username or Password is Incorrect, Please Try Again!")
-            End If
-            reader.Close() ' Close the reader
+            ' Execute the query and check if user exists
+            Using reader As MySqlDataReader = command.ExecuteReader()
+                If reader.HasRows Then
+                    reader.Read() ' Move to the first row
+                    Dim accountlevel As String = reader("accesslevel").ToString().ToLower() ' Get account level in lowercase
+
+                    ' Close the reader as it's no longer needed
+                    reader.Close()
+
+                    ' Open different forms based on account level
+                    Select Case accountlevel
+                        Case "low"
+                            Dim low As New Form3()
+                            low.Show() ' Open Form3 for low level account UI
+                            Me.Hide() ' Hide current form
+                        Case "mid"
+                            Dim mid As New Form4()
+                            mid.Show() ' Open Form4 for mid level account UI
+                            Me.Hide() ' Hide current form
+                        Case "high"
+                            Dim high As New Form5()
+                            high.Show() ' Open Form5 for high level account UI
+                            Me.Hide() ' Hide current form
+                        Case Else
+                            MsgBox("Error: Account level not recognized")
+                    End Select
+
+                    MsgBox("Welcome " & username)
+                    txtpassword.Clear()
+                    txtuname.Clear()
+                Else
+                    MsgBox("Username or Password is Incorrect, Please Try Again!")
+                End If
+            End Using ' Reader and connection will be properly closed here
+
         Catch ex As MySqlException
             MsgBox("Database Error: " & ex.Message)
         Catch ex As Exception
@@ -81,6 +107,7 @@ Public Class Form1
         End Try
     End Sub
 
+
     Private Sub btncreate_Click(sender As Object, e As EventArgs) Handles btncreate.Click
         ' Ensure the connection is closed
         If conn IsNot Nothing AndAlso conn.State = ConnectionState.Open Then
@@ -91,11 +118,6 @@ Public Class Form1
         create.Show() ' Open Form2 for account creation
         Me.Hide() ' Hide Form1
     End Sub
-
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
-
     Private Sub btnclose_Click(sender As Object, e As EventArgs) Handles btnclose.Click
         Application.Exit()
     End Sub
