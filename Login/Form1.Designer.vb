@@ -72,10 +72,10 @@ Partial Class Form1
         'txtuname
         '
         Me.txtuname.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtuname.Font = New System.Drawing.Font("Yeseva One", 15.75!)
+        Me.txtuname.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
         Me.txtuname.Location = New System.Drawing.Point(535, 191)
         Me.txtuname.Name = "txtuname"
-        Me.txtuname.Size = New System.Drawing.Size(242, 32)
+        Me.txtuname.Size = New System.Drawing.Size(242, 31)
         Me.txtuname.TabIndex = 15
         '
         'username
@@ -83,7 +83,7 @@ Partial Class Form1
         Me.username.AutoSize = True
         Me.username.BackColor = System.Drawing.Color.Transparent
         Me.username.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.username.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.username.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.username.ForeColor = System.Drawing.Color.NavajoWhite
         Me.username.Location = New System.Drawing.Point(395, 188)
         Me.username.Name = "username"
@@ -97,7 +97,7 @@ Partial Class Form1
         Me.password.AutoSize = True
         Me.password.BackColor = System.Drawing.Color.Transparent
         Me.password.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.password.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.password.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.password.ForeColor = System.Drawing.Color.NavajoWhite
         Me.password.Location = New System.Drawing.Point(395, 220)
         Me.password.Name = "password"
@@ -112,7 +112,7 @@ Partial Class Form1
         Me.btnlogin.BackColor = System.Drawing.Color.Transparent
         Me.btnlogin.Dock = System.Windows.Forms.DockStyle.Top
         Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnlogin.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnlogin.ForeColor = System.Drawing.Color.NavajoWhite
         Me.btnlogin.Location = New System.Drawing.Point(535, 257)
         Me.btnlogin.Name = "btnlogin"
@@ -126,7 +126,7 @@ Partial Class Form1
         Me.welcome.AutoSize = True
         Me.welcome.BackColor = System.Drawing.Color.Transparent
         Me.welcome.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.welcome.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.welcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.welcome.ForeColor = System.Drawing.Color.NavajoWhite
         Me.welcome.Location = New System.Drawing.Point(535, 151)
         Me.welcome.Name = "welcome"
@@ -138,7 +138,7 @@ Partial Class Form1
         'txtpassword
         '
         Me.txtpassword.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtpassword.Font = New System.Drawing.Font("Yeseva One", 16.0!)
+        Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
         Me.txtpassword.Location = New System.Drawing.Point(535, 223)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.Size = New System.Drawing.Size(242, 32)
@@ -151,12 +151,12 @@ Partial Class Form1
         Me.btncreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btncreate.Dock = System.Windows.Forms.DockStyle.Right
         Me.btncreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btncreate.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncreate.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncreate.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btncreate.Location = New System.Drawing.Point(438, 257)
+        Me.btncreate.Location = New System.Drawing.Point(443, 257)
         Me.btncreate.MaximumSize = New System.Drawing.Size(0, 35)
         Me.btncreate.Name = "btncreate"
-        Me.btncreate.Size = New System.Drawing.Size(91, 29)
+        Me.btncreate.Size = New System.Drawing.Size(86, 29)
         Me.btncreate.TabIndex = 22
         Me.btncreate.Text = "Create"
         Me.btncreate.UseVisualStyleBackColor = False
@@ -167,11 +167,11 @@ Partial Class Form1
         Me.btnclose.BackColor = System.Drawing.Color.Transparent
         Me.btnclose.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnclose.Font = New System.Drawing.Font("Yeseva One", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnclose.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnclose.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btnclose.Location = New System.Drawing.Point(535, 413)
+        Me.btnclose.Location = New System.Drawing.Point(535, 412)
         Me.btnclose.Name = "btnclose"
-        Me.btnclose.Size = New System.Drawing.Size(242, 34)
+        Me.btnclose.Size = New System.Drawing.Size(242, 35)
         Me.btnclose.TabIndex = 23
         Me.btnclose.Text = "Close"
         Me.btnclose.UseVisualStyleBackColor = False

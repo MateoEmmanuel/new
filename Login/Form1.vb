@@ -72,15 +72,15 @@ Public Class Form1
                     ' Open different forms based on account level
                     Select Case accountlevel
                         Case "low"
-                            Dim low As New Form3()
+                            Dim low As New Student()
                             low.Show() ' Open Form3 for low level account UI
                             Me.Hide() ' Hide current form
                         Case "mid"
-                            Dim mid As New Form4()
+                            Dim mid As New Staff()
                             mid.Show() ' Open Form4 for mid level account UI
                             Me.Hide() ' Hide current form
                         Case "high"
-                            Dim high As New Form5()
+                            Dim high As New Admin()
                             high.Show() ' Open Form5 for high level account UI
                             Me.Hide() ' Hide current form
                         Case Else
