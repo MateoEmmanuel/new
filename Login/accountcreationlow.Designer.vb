@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class accountcreationlow
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -239,7 +239,7 @@ Partial Class Form2
         Me.btnexit.Text = "Exit"
         Me.btnexit.UseVisualStyleBackColor = False
         '
-        'Form2
+        'accountcreationlow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -253,7 +253,7 @@ Partial Class Form2
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.Color.NavajoWhite
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form2"
+        Me.Name = "accountcreationlow"
         Me.Text = "Form2"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)

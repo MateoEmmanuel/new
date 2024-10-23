@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -38,11 +38,11 @@ Partial Class Form1
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 5
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.28715!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.75439!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.50488!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.08187!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.371709!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.31605!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.76807!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.51519!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.02691!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.373768!))
         Me.TableLayoutPanel1.Controls.Add(Me.txtuname, 3, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.username, 2, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.password, 2, 3)
@@ -55,17 +55,13 @@ Partial Class Form1
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 7
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.333333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.444445!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.666667!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.30055!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.397731!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.408496!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.150422!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.13966!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.60314!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
         Me.TableLayoutPanel1.TabIndex = 0
         '
@@ -73,7 +69,7 @@ Partial Class Form1
         '
         Me.txtuname.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtuname.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.txtuname.Location = New System.Drawing.Point(535, 191)
+        Me.txtuname.Location = New System.Drawing.Point(535, 210)
         Me.txtuname.Name = "txtuname"
         Me.txtuname.Size = New System.Drawing.Size(242, 31)
         Me.txtuname.TabIndex = 15
@@ -85,9 +81,9 @@ Partial Class Form1
         Me.username.Dock = System.Windows.Forms.DockStyle.Fill
         Me.username.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.username.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.username.Location = New System.Drawing.Point(395, 188)
+        Me.username.Location = New System.Drawing.Point(395, 207)
         Me.username.Name = "username"
-        Me.username.Size = New System.Drawing.Size(134, 32)
+        Me.username.Size = New System.Drawing.Size(134, 34)
         Me.username.TabIndex = 17
         Me.username.Text = "Username:"
         Me.username.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -99,9 +95,9 @@ Partial Class Form1
         Me.password.Dock = System.Windows.Forms.DockStyle.Fill
         Me.password.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.password.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.password.Location = New System.Drawing.Point(395, 220)
+        Me.password.Location = New System.Drawing.Point(395, 241)
         Me.password.Name = "password"
-        Me.password.Size = New System.Drawing.Size(134, 34)
+        Me.password.Size = New System.Drawing.Size(134, 37)
         Me.password.TabIndex = 19
         Me.password.Text = "Password:"
         Me.password.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -114,9 +110,9 @@ Partial Class Form1
         Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnlogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnlogin.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btnlogin.Location = New System.Drawing.Point(535, 257)
+        Me.btnlogin.Location = New System.Drawing.Point(535, 281)
         Me.btnlogin.Name = "btnlogin"
-        Me.btnlogin.Size = New System.Drawing.Size(242, 29)
+        Me.btnlogin.Size = New System.Drawing.Size(242, 35)
         Me.btnlogin.TabIndex = 20
         Me.btnlogin.Text = "LogIn"
         Me.btnlogin.UseVisualStyleBackColor = False
@@ -128,9 +124,9 @@ Partial Class Form1
         Me.welcome.Dock = System.Windows.Forms.DockStyle.Fill
         Me.welcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.welcome.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.welcome.Location = New System.Drawing.Point(535, 151)
+        Me.welcome.Location = New System.Drawing.Point(535, 169)
         Me.welcome.Name = "welcome"
-        Me.welcome.Size = New System.Drawing.Size(242, 37)
+        Me.welcome.Size = New System.Drawing.Size(242, 38)
         Me.welcome.TabIndex = 16
         Me.welcome.Text = "Welcome"
         Me.welcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -139,8 +135,9 @@ Partial Class Form1
         '
         Me.txtpassword.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!)
-        Me.txtpassword.Location = New System.Drawing.Point(535, 223)
+        Me.txtpassword.Location = New System.Drawing.Point(535, 244)
         Me.txtpassword.Name = "txtpassword"
+        Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpassword.Size = New System.Drawing.Size(242, 32)
         Me.txtpassword.TabIndex = 18
         '
@@ -153,10 +150,10 @@ Partial Class Form1
         Me.btncreate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btncreate.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncreate.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btncreate.Location = New System.Drawing.Point(443, 257)
+        Me.btncreate.Location = New System.Drawing.Point(443, 281)
         Me.btncreate.MaximumSize = New System.Drawing.Size(0, 35)
         Me.btncreate.Name = "btncreate"
-        Me.btncreate.Size = New System.Drawing.Size(86, 29)
+        Me.btncreate.Size = New System.Drawing.Size(86, 35)
         Me.btncreate.TabIndex = 22
         Me.btncreate.Text = "Create"
         Me.btncreate.UseVisualStyleBackColor = False
@@ -176,7 +173,7 @@ Partial Class Form1
         Me.btnclose.Text = "Close"
         Me.btnclose.UseVisualStyleBackColor = False
         '
-        'Form1
+        'Login
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -193,7 +190,7 @@ Partial Class Form1
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form1"
+        Me.Name = "Login"
         Me.ShowInTaskbar = False
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports ConnectionModule
-Public Class Form2
+Public Class accountcreationlow
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Create a new TableLayoutPanel and set Dock to fill the form
         Dim tableLayoutPanel As New TableLayoutPanel()
@@ -41,7 +41,7 @@ Public Class Form2
         If conn IsNot Nothing AndAlso conn.State = ConnectionState.Open Then
             conn.Close()
         End If
-        Dim login As New Form1()
+        Dim login As New Login()
         login.Show() ' Show Form1
         Me.Close() ' Hide Form2
     End Sub

@@ -131,7 +131,7 @@ Partial Class Staff
         'DGVcomment
         '
         Me.DGVcomment.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.DGVcomment.BackgroundColor = System.Drawing.Color.Navy
+        Me.DGVcomment.BackgroundColor = System.Drawing.Color.DodgerBlue
         Me.DGVcomment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVcomment.GridColor = System.Drawing.Color.NavajoWhite
         Me.DGVcomment.Location = New System.Drawing.Point(69, 176)
