@@ -37,7 +37,6 @@ Public Class Login
 
         ' Add the TableLayoutPanel to the form
         Me.Controls.Add(tableLayoutPanel)
-
     End Sub
 
     ' Method to dynamically adjust font sizes based on the TableLayoutPanel size
