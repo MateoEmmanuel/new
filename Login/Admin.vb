@@ -76,4 +76,13 @@ Public Class Admin
         feedback()
         FormatDataGridViews_feedback()
     End Sub
+
+    Private Sub btnmanagement_Click(sender As Object, e As EventArgs) Handles btnmanagement.Click
+
+    End Sub
+
+    Private Sub btnapproval_Click(sender As Object, e As EventArgs) Handles btnapproval.Click
+        requestapproval.Show()
+        Me.Hide()
+    End Sub
 End Class
