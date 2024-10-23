@@ -221,5 +221,8 @@
   <ItemGroup>
     <None Include="Resources\image-removebg-preview2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FB_IMG_1729211691620.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

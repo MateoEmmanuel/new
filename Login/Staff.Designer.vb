@@ -28,9 +28,9 @@ Partial Class Staff
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DGVcomment = New System.Windows.Forms.DataGridView()
+        CType(Me.DGVcomment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button5
@@ -116,34 +116,40 @@ Partial Class Staff
         Me.Button1.Text = "Request Approval"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Label1
+        'Label2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(224, 165)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 46
-        Me.Label1.Text = "Label1"
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label2.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.Label2.Location = New System.Drawing.Point(174, 148)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(141, 25)
+        Me.Label2.TabIndex = 47
+        Me.Label2.Text = "Room Status:"
         '
-        'DataGridView2
+        'DGVcomment
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(66, 181)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(366, 137)
-        Me.DataGridView2.TabIndex = 45
+        Me.DGVcomment.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.DGVcomment.BackgroundColor = System.Drawing.Color.Navy
+        Me.DGVcomment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVcomment.GridColor = System.Drawing.Color.NavajoWhite
+        Me.DGVcomment.Location = New System.Drawing.Point(69, 176)
+        Me.DGVcomment.Name = "DGVcomment"
+        Me.DGVcomment.Size = New System.Drawing.Size(366, 137)
+        Me.DGVcomment.TabIndex = 46
         '
-        'Form4
+        'Staff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackgroundImage = Global.Login.My.Resources.Resources.image_removebg_preview2
+        Me.BackgroundImage = Global.Login.My.Resources.Resources.FB_IMG_1729211691620
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.DGVcomment)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button4)
@@ -152,10 +158,10 @@ Partial Class Staff
         Me.Controls.Add(Me.btncreate)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form4"
+        Me.Name = "Staff"
         Me.Text = "Form4"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVcomment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -167,6 +173,6 @@ Partial Class Staff
     Friend WithEvents Button4 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Label2 As Label
+    Friend WithEvents DGVcomment As DataGridView
 End Class

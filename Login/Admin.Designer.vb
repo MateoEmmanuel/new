@@ -28,12 +28,12 @@ Partial Class Admin
         Me.btncreate = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DGVcomment = New System.Windows.Forms.DataGridView()
+        Me.DGVreport = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVcomment, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVreport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button5
@@ -119,53 +119,66 @@ Partial Class Admin
         Me.Button1.Text = "Request Approval"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'DataGridView1
+        'DGVcomment
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(64, 265)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(366, 137)
-        Me.DataGridView1.TabIndex = 42
+        Me.DGVcomment.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.DGVcomment.BackgroundColor = System.Drawing.Color.Navy
+        Me.DGVcomment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVcomment.GridColor = System.Drawing.Color.NavajoWhite
+        Me.DGVcomment.Location = New System.Drawing.Point(99, 273)
+        Me.DGVcomment.Name = "DGVcomment"
+        Me.DGVcomment.Size = New System.Drawing.Size(297, 137)
+        Me.DGVcomment.TabIndex = 42
         '
-        'DataGridView2
+        'DGVreport
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(64, 101)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(366, 137)
-        Me.DataGridView2.TabIndex = 43
+        Me.DGVreport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DGVreport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGVreport.BackgroundColor = System.Drawing.Color.Navy
+        Me.DGVreport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVreport.GridColor = System.Drawing.Color.NavajoWhite
+        Me.DGVreport.Location = New System.Drawing.Point(99, 105)
+        Me.DGVreport.Name = "DGVreport"
+        Me.DGVreport.Size = New System.Drawing.Size(297, 137)
+        Me.DGVreport.TabIndex = 43
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(222, 85)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label1.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.Label1.Location = New System.Drawing.Point(204, 77)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(93, 25)
         Me.Label1.TabIndex = 44
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Reports:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(222, 249)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.Label2.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.Label2.Location = New System.Drawing.Point(179, 245)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(141, 25)
         Me.Label2.TabIndex = 45
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "Room Status:"
         '
-        'Form5
+        'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.BackgroundImage = Global.Login.My.Resources.Resources.image_removebg_preview2
+        Me.BackgroundImage = Global.Login.My.Resources.Resources.FB_IMG_1729211691620
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DGVreport)
+        Me.Controls.Add(Me.DGVcomment)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
@@ -174,11 +187,11 @@ Partial Class Admin
         Me.Controls.Add(Me.btncreate)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form5"
+        Me.Name = "Admin"
         Me.Text = "ADMIN"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVcomment, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVreport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -189,8 +202,8 @@ Partial Class Admin
     Friend WithEvents btncreate As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DGVcomment As DataGridView
+    Friend WithEvents DGVreport As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
 End Class
