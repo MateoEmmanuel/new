@@ -123,6 +123,7 @@ Partial Class Admin
         '
         Me.DGVcomment.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DGVcomment.BackgroundColor = System.Drawing.Color.Navy
+        Me.DGVcomment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DGVcomment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVcomment.GridColor = System.Drawing.Color.NavajoWhite
         Me.DGVcomment.Location = New System.Drawing.Point(99, 273)
@@ -135,6 +136,7 @@ Partial Class Admin
         Me.DGVreport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.DGVreport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVreport.BackgroundColor = System.Drawing.Color.Navy
+        Me.DGVreport.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DGVreport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVreport.GridColor = System.Drawing.Color.NavajoWhite
         Me.DGVreport.Location = New System.Drawing.Point(99, 105)
