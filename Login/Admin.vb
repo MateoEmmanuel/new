@@ -9,11 +9,12 @@ Public Class Admin
         End If
         DbConnect()
         report()
-        roomstatus()
-        FormatDataGridViews()
+        feedback()
+        FormatDataGridViews_report()
+        FormatDataGridViews_feedback()
     End Sub
     Private Sub report()
-        Dim query As String = "SELECT * FROM report"
+        Dim query As String = "SELECT dt,report FROM report"
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim table As New DataTable()
 
@@ -28,8 +29,8 @@ Public Class Admin
         End Try
     End Sub
 
-    Private Sub roomstatus()
-        Dim query As String = "SELECT * FROM sched" ' Use roomlist if you want to get room status from that table
+    Private Sub feedback()
+        Dim query As String = "SELECT dt,feedback FROM feedback" ' Use roomlist if you want to get room status from that table
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim table As New DataTable()
 
@@ -44,19 +45,19 @@ Public Class Admin
         End Try
     End Sub
 
-    Private Sub FormatDataGridViews()
+    Private Sub FormatDataGridViews_report()
         ' Format the reports DataGridView
         With DGVreport
-            .Columns(0).HeaderText = "Report ID"  ' Customize as necessary
+            .Columns(0).HeaderText = "Date & Time"
             .Columns(1).HeaderText = "Report"
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill ' Adjust column widths
         End With
-
+    End Sub
+    Private Sub FormatDataGridViews_feedback()
         ' Format the rooms DataGridView
         With DGVfeedback
-            .Columns(0).HeaderText = "Room Code"  ' Customize as necessary
-            .Columns(1).HeaderText = "Room Name"
-            .Columns(2).HeaderText = "Room Status"
+            .Columns(0).HeaderText = "Date & Time"
+            .Columns(1).HeaderText = "Feedback"
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill ' Adjust column widths
         End With
     End Sub
@@ -64,5 +65,15 @@ Public Class Admin
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
         Login.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnreport_Click(sender As Object, e As EventArgs) Handles btnreport.Click
+        report()
+        FormatDataGridViews_report()
+    End Sub
+
+    Private Sub btnfeedback_Click(sender As Object, e As EventArgs) Handles btnfeedback.Click
+        feedback()
+        FormatDataGridViews_feedback()
     End Sub
 End Class

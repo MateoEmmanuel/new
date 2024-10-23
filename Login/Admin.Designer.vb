@@ -24,13 +24,13 @@ Partial Class Admin
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.btnlist = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnapproval = New System.Windows.Forms.Button()
         Me.btnmanagement = New System.Windows.Forms.Button()
         Me.btnlogout = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnreport = New System.Windows.Forms.Button()
         Me.btnfeedback = New System.Windows.Forms.Button()
         Me.DGVreport = New System.Windows.Forms.DataGridView()
@@ -86,31 +86,6 @@ Partial Class Admin
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(407, 435)
         Me.TableLayoutPanel2.TabIndex = 0
-        '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel3.ColumnCount = 3
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.btnreport, 1, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.btnfeedback, 1, 4)
-        Me.TableLayoutPanel3.Controls.Add(Me.DGVreport, 1, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.DGVfeedback, 1, 5)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 12)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 7
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(381, 435)
-        Me.TableLayoutPanel3.TabIndex = 1
         '
         'Button5
         '
@@ -202,13 +177,38 @@ Partial Class Admin
         Me.btnlogout.Text = "Log out"
         Me.btnlogout.UseVisualStyleBackColor = False
         '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel3.ColumnCount = 3
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.btnreport, 1, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.btnfeedback, 1, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.DGVreport, 1, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.DGVfeedback, 1, 5)
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 12)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 7
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 95.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(381, 435)
+        Me.TableLayoutPanel3.TabIndex = 1
+        '
         'btnreport
         '
         Me.btnreport.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnreport.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnreport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnreport.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btnreport.Location = New System.Drawing.Point(23, 119)
+        Me.btnreport.Location = New System.Drawing.Point(23, 149)
         Me.btnreport.Name = "btnreport"
         Me.btnreport.Size = New System.Drawing.Size(335, 23)
         Me.btnreport.TabIndex = 0
@@ -221,7 +221,7 @@ Partial Class Admin
         Me.btnfeedback.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnfeedback.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnfeedback.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btnfeedback.Location = New System.Drawing.Point(23, 260)
+        Me.btnfeedback.Location = New System.Drawing.Point(23, 268)
         Me.btnfeedback.Name = "btnfeedback"
         Me.btnfeedback.Size = New System.Drawing.Size(335, 23)
         Me.btnfeedback.TabIndex = 1
@@ -237,10 +237,10 @@ Partial Class Admin
         Me.DGVreport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVreport.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVreport.GridColor = System.Drawing.Color.NavajoWhite
-        Me.DGVreport.Location = New System.Drawing.Point(23, 148)
+        Me.DGVreport.Location = New System.Drawing.Point(23, 178)
         Me.DGVreport.Name = "DGVreport"
         Me.DGVreport.ReadOnly = True
-        Me.DGVreport.Size = New System.Drawing.Size(335, 106)
+        Me.DGVreport.Size = New System.Drawing.Size(335, 79)
         Me.DGVreport.TabIndex = 2
         '
         'DGVfeedback
@@ -252,10 +252,10 @@ Partial Class Admin
         Me.DGVfeedback.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVfeedback.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVfeedback.GridColor = System.Drawing.Color.NavajoWhite
-        Me.DGVfeedback.Location = New System.Drawing.Point(23, 289)
+        Me.DGVfeedback.Location = New System.Drawing.Point(23, 297)
         Me.DGVfeedback.Name = "DGVfeedback"
         Me.DGVfeedback.ReadOnly = True
-        Me.DGVfeedback.Size = New System.Drawing.Size(335, 106)
+        Me.DGVfeedback.Size = New System.Drawing.Size(335, 79)
         Me.DGVfeedback.TabIndex = 3
         '
         'Admin
