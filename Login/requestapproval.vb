@@ -160,7 +160,7 @@ Public Class requestapproval
             adapter.Fill(table)
 
             ' Bind the DataTable to the DataGridView
-            DGVrequest.DataSource = table
+            DGVschedules.DataSource = table
         Catch ex As Exception
             MessageBox.Show("Error retrieving room statuses: " & ex.Message)
         End Try
@@ -168,8 +168,8 @@ Public Class requestapproval
 
     Private Sub FormatDataGridViews_schedules()
         ' Format the schedules DataGridView
-        If DGVrequest.Rows.Count > 0 Then ' Check if there are rows
-            With DGVrequest
+        If DGVschedules.Rows.Count > 0 Then ' Check if there are rows
+            With DGVschedules
                 .Columns(0).HeaderText = "Time"
                 .Columns(1).HeaderText = "Room"
                 .Columns(2).HeaderText = "Room Code"
@@ -183,7 +183,7 @@ Public Class requestapproval
                 .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             End With
         Else
-            With DGVrequest
+            With DGVschedules
                 .Columns(0).HeaderText = "Time"
                 .Columns(1).HeaderText = "Room"
                 .Columns(2).HeaderText = "Room Code"

@@ -218,6 +218,7 @@ Partial Class requestapproval
         '
         'btnlistreload
         '
+        Me.btnlistreload.AutoSize = True
         Me.btnlistreload.BackColor = System.Drawing.Color.Transparent
         Me.btnlistreload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnlistreload.Dock = System.Windows.Forms.DockStyle.Fill
