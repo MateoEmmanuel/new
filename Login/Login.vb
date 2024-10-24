@@ -102,21 +102,26 @@ Public Class Login
                             Dim low As New Student()
                             low.Show() ' Open Form3 for low level account UI
                             Me.Hide() ' Hide current form
+                            MsgBox("Welcome " & username)
+                            txtpassword.Clear()
+                            txtuname.Clear()
                         Case "mid"
                             Dim mid As New Staff()
                             mid.Show() ' Open Form4 for mid level account UI
                             Me.Hide() ' Hide current form
+                            MsgBox("Welcome " & username)
+                            txtpassword.Clear()
+                            txtuname.Clear()
                         Case "high"
                             Dim high As New Admin()
                             high.Show() ' Open Form5 for high level account UI
                             Me.Hide() ' Hide current form
+                            MsgBox("Welcome " & username)
+                            txtpassword.Clear()
+                            txtuname.Clear()
                         Case Else
                             MsgBox("Error: Account level not recognized")
                     End Select
-
-                    MsgBox("Welcome " & username)
-                    txtpassword.Clear()
-                    txtuname.Clear()
                 Else
                     MsgBox("Username or Password is Incorrect, Please Try Again!")
                 End If
