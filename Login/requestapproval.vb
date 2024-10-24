@@ -4,6 +4,7 @@ Imports System.Data
 Imports ConnectionModule
 
 Public Class requestapproval
+
     Private Sub requestapproval_loader(sender As Object, e As EventArgs) Handles MyBase.Load
         If conn.State = ConnectionState.Open Then
             conn.Close()
@@ -15,7 +16,36 @@ Public Class requestapproval
     End Sub
 
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure to add a new schedule", "Confirm Creation of New Schedule?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+        If result = DialogResult.Yes Then
 
+            If DGVrequest.SelectedRows.Count > 0 Then
+                Dim selectedRow As DataGridViewRow = DGVschedules.SelectedRows(0)
+
+                ' Create an instance of addscheduleadmin form
+                Dim addForm As New addscheduleadmin()
+
+                ' Pass the selected schedule data to the addscheduleadmin form
+                addForm.rDate = selectedRow.Cells("Date").Value.ToString()
+                addForm.rTime = selectedRow.Cells("Time").Value.ToString()
+                addForm.rRoom = selectedRow.Cells("Room").Value.ToString()
+
+                ' Show the addscheduleadmin form
+                addForm.ShowDialog()
+                addscheduleadmin.Show()
+            Else
+                addscheduleadmin.Show()
+            End If
+
+            addscheduleadmin.Show()
+        ElseIf result = DialogResult.No Then
+            tableloader_request()
+            tableloader_schedules()
+            FormatDataGridViews_schedules()
+            FormatDataGridViews_request()
+        Else
+            MsgBox("Error Try Again!")
+        End If
     End Sub
 
     Private Sub btndelete_Click(sender As Object, e As EventArgs) Handles btndelete.Click
@@ -105,7 +135,7 @@ Public Class requestapproval
         Me.Hide()
     End Sub
     Private Sub tableloader_request()
-        Dim query As String = "SELECT request_d, request_t, room, request, requestID FROM requests" ' Use roomlist if you want to get room status from that table
+        Dim query As String = "SELECT request_date, request_t, room, request, requestID FROM requests" ' Use roomlist if you want to get room status from that table
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim table As New DataTable()
 
@@ -151,7 +181,8 @@ Public Class requestapproval
     End Sub
 
     Private Sub tableloader_schedules()
-        Dim query As String = "SELECT room_time, room_name, room_code, building_letter, shed_id FROM sched" ' Use roomlist if you want to get room status from that table
+        Dim query As String = "SELECT room_date, room_day, room_time, room_name, building_letter, room_code, shed_id FROM sched; _
+                union all; SELECT room_date, room_day, room_time, room_name, building_letter, room_code, shed_id FROM schedtemp;" ' Use roomlist if you want to get room status from that table
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim table As New DataTable()
 
@@ -170,11 +201,13 @@ Public Class requestapproval
         ' Format the schedules DataGridView
         If DGVschedules.Rows.Count > 0 Then ' Check if there are rows
             With DGVschedules
-                .Columns(0).HeaderText = "Time"
-                .Columns(1).HeaderText = "Room"
-                .Columns(2).HeaderText = "Room Code"
-                .Columns(3).HeaderText = "Building"
-                .Columns(4).HeaderText = "Schedule ID"
+                .Columns(0).HeaderText = "Date"
+                .Columns(1).HeaderText = "Day"
+                .Columns(2).HeaderText = "Time"
+                .Columns(3).HeaderText = "Room Name"
+                .Columns(4).HeaderText = "Building Letter"
+                .Columns(5).HeaderText = "Room Code"
+                .Columns(6).HeaderText = "Sched ID"
 
                 ' First, adjust the columns based on data length
                 .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
@@ -184,11 +217,13 @@ Public Class requestapproval
             End With
         Else
             With DGVschedules
-                .Columns(0).HeaderText = "Time"
-                .Columns(1).HeaderText = "Room"
-                .Columns(2).HeaderText = "Room Code"
-                .Columns(3).HeaderText = "Building"
-                .Columns(4).HeaderText = "Schedule ID"
+                .Columns(0).HeaderText = "Date"
+                .Columns(1).HeaderText = "Day"
+                .Columns(2).HeaderText = "Time"
+                .Columns(3).HeaderText = "Room Name"
+                .Columns(4).HeaderText = "Building Letter"
+                .Columns(5).HeaderText = "Room Code"
+                .Columns(6).HeaderText = "Sched ID"
 
                 ' No auto-size adjustment if no data
                 .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
