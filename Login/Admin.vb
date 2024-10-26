@@ -121,4 +121,83 @@ Public Class Admin
         requestapproval.Show()
         Me.Hide()
     End Sub
+
+    Private Sub DGVreport_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVreport.CellDoubleClick
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = DGVreport.Rows(e.RowIndex)
+            Dim reportId As String = selectedRow.Cells("report_id").Value.ToString()
+
+            Dim result As DialogResult = MessageBox.Show("Do you want to delete the report?", "Delete Report",
+                                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If result = DialogResult.Yes Then
+                ' Code to delete the report
+                DeleteReport(reportId)
+                MessageBox.Show("Report deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                report() ' Refresh report data
+                FormatDataGridViews_report() ' Reformat the DataGridView
+            Else
+                MessageBox.Show("Feature not yet available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub DGVfeedback_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVfeedback.CellDoubleClick
+        If e.RowIndex >= 0 Then
+            Dim selectedRow As DataGridViewRow = DGVfeedback.Rows(e.RowIndex)
+            Dim feedbackId As String = selectedRow.Cells("feedback_id").Value.ToString()
+
+            Dim result As DialogResult = MessageBox.Show("Do you want to delete the feedback?",
+                                                          "Delete Feedback",
+                                                          MessageBoxButtons.YesNo,
+                                                          MessageBoxIcon.Question)
+
+            If result = DialogResult.Yes Then
+                ' Code to delete the feedback
+                DeleteFeedback(feedbackId)
+                MessageBox.Show("Feedback deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                feedback() ' Refresh feedback data
+                FormatDataGridViews_feedback() ' Reformat the DataGridView
+            Else
+                MessageBox.Show("Feature not yet available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    ' Sample deletion method (implement as needed)
+    Private Sub DeleteReport(reportId As String)
+        Dim query As String = "DELETE FROM report WHERE report_id = @reportId"
+        Using command As New MySqlCommand(query, conn)
+            command.Parameters.AddWithValue("@reportId", reportId)
+            Try
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                MessageBox.Show("Error deleting report: " & ex.Message)
+            Finally
+                conn.Close()
+            End Try
+        End Using
+    End Sub
+
+    ' Sample deletion method (implement as needed)
+    Private Sub DeleteFeedback(feedbackId As String)
+        Dim query As String = "DELETE FROM feedback WHERE feedback_id = @feedbackId"
+        Using command As New MySqlCommand(query, conn)
+            command.Parameters.AddWithValue("@feedbackId", feedbackId)
+            Try
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
+                command.ExecuteNonQuery()
+            Catch ex As Exception
+                MessageBox.Show("Error deleting feedback: " & ex.Message)
+            Finally
+                conn.Close()
+            End Try
+        End Using
+    End Sub
+
 End Class
