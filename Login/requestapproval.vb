@@ -33,11 +33,13 @@ Public Class requestapproval
                 ' Show the addscheduleadmin form
                 addForm.ShowDialog()
                 addscheduleadmin.Show()
+                Me.Hide()
+
             Else
                 addscheduleadmin.Show()
+                Me.Hide()
             End If
 
-            addscheduleadmin.Show()
         ElseIf result = DialogResult.No Then
             tableloader_request()
             tableloader_schedules()
@@ -135,7 +137,7 @@ Public Class requestapproval
         Me.Hide()
     End Sub
     Private Sub tableloader_request()
-        Dim query As String = "SELECT request_date, request_t, room, request, requestID FROM requests" ' Use roomlist if you want to get room status from that table
+        Dim query As String = "SELECT request_d, request_t, room, request, requestID FROM requests" ' Use roomlist if you want to get room status from that table
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim table As New DataTable()
 
@@ -181,8 +183,8 @@ Public Class requestapproval
     End Sub
 
     Private Sub tableloader_schedules()
-        Dim query As String = "SELECT room_date, room_day, room_time, room_name, building_letter, room_code, shed_id FROM sched; _
-                union all; SELECT room_date, room_day, room_time, room_name, building_letter, room_code, shed_id FROM schedtemp;" ' Use roomlist if you want to get room status from that table
+        Dim query As String = "SELECT room_date, room_day, room_time, room_name, building_letter, room_code, shed_id FROM sched _
+            union all SELECT room_date, room_day, room_time, room_name, building_letter, room_code, shed_id FROM schedtemp;" ' Use roomlist if you want to get room status from that table
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim table As New DataTable()
 

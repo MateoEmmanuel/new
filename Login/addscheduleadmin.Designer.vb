@@ -34,27 +34,29 @@ Partial Class addscheduleadmin
         Me.txtrname = New System.Windows.Forms.TextBox()
         Me.txtrcode = New System.Windows.Forms.TextBox()
         Me.txtbuilding = New System.Windows.Forms.TextBox()
-        Me.txtrdate = New System.Windows.Forms.TextBox()
-        Me.txtrday = New System.Windows.Forms.TextBox()
-        Me.txtrtime = New System.Windows.Forms.TextBox()
+        Me.txtrDD = New System.Windows.Forms.TextBox()
         Me.txtcode = New System.Windows.Forms.Label()
         Me.txtroom = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtdate = New System.Windows.Forms.Label()
-        Me.txtday = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.cboDD = New System.Windows.Forms.ComboBox()
         Me.DGVrooms = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnback = New System.Windows.Forms.Button()
         Me.btnclear = New System.Windows.Forms.Button()
         Me.btnaddschedule = New System.Windows.Forms.Button()
         Me.btnconfirm = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.cbominute = New System.Windows.Forms.ComboBox()
+        Me.cboampm = New System.Windows.Forms.ComboBox()
+        Me.cbohour = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.DGVrooms, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -153,7 +155,7 @@ Partial Class addscheduleadmin
         Me.Label1.Size = New System.Drawing.Size(228, 39)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Search Box:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'cbosearch
         '
@@ -168,24 +170,22 @@ Partial Class addscheduleadmin
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 5
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.28898!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.63905!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.381409!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.13392!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.25134!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.54011!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.63102!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.79679!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.55664!))
         Me.TableLayoutPanel4.Controls.Add(Me.btnadd, 4, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.txtrname, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.txtrcode, 1, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.txtbuilding, 1, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.txtrdate, 3, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.txtrday, 3, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.txtrtime, 3, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtrDD, 3, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.txtcode, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.txtroom, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.Label4, 0, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.txtdate, 2, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.txtday, 2, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label8, 2, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.cboDD, 2, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label8, 2, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.txtbuilding, 1, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel6, 3, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 175)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -213,55 +213,37 @@ Partial Class addscheduleadmin
         '
         Me.txtrname.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtrname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrname.Location = New System.Drawing.Point(102, 3)
+        Me.txtrname.Location = New System.Drawing.Point(147, 3)
         Me.txtrname.Name = "txtrname"
-        Me.txtrname.Size = New System.Drawing.Size(245, 29)
+        Me.txtrname.Size = New System.Drawing.Size(200, 29)
         Me.txtrname.TabIndex = 0
         '
         'txtrcode
         '
         Me.txtrcode.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtrcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrcode.Location = New System.Drawing.Point(102, 37)
+        Me.txtrcode.Location = New System.Drawing.Point(147, 37)
         Me.txtrcode.Name = "txtrcode"
-        Me.txtrcode.Size = New System.Drawing.Size(245, 29)
+        Me.txtrcode.Size = New System.Drawing.Size(200, 29)
         Me.txtrcode.TabIndex = 1
         '
         'txtbuilding
         '
         Me.txtbuilding.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtbuilding.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbuilding.Location = New System.Drawing.Point(102, 68)
+        Me.txtbuilding.Location = New System.Drawing.Point(147, 68)
         Me.txtbuilding.Name = "txtbuilding"
-        Me.txtbuilding.Size = New System.Drawing.Size(245, 29)
+        Me.txtbuilding.Size = New System.Drawing.Size(200, 29)
         Me.txtbuilding.TabIndex = 2
         '
-        'txtrdate
+        'txtrDD
         '
-        Me.txtrdate.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtrdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrdate.Location = New System.Drawing.Point(423, 3)
-        Me.txtrdate.Name = "txtrdate"
-        Me.txtrdate.Size = New System.Drawing.Size(189, 29)
-        Me.txtrdate.TabIndex = 4
-        '
-        'txtrday
-        '
-        Me.txtrday.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtrday.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrday.Location = New System.Drawing.Point(423, 37)
-        Me.txtrday.Name = "txtrday"
-        Me.txtrday.Size = New System.Drawing.Size(189, 29)
-        Me.txtrday.TabIndex = 5
-        '
-        'txtrtime
-        '
-        Me.txtrtime.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtrtime.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrtime.Location = New System.Drawing.Point(423, 68)
-        Me.txtrtime.Name = "txtrtime"
-        Me.txtrtime.Size = New System.Drawing.Size(189, 29)
-        Me.txtrtime.TabIndex = 6
+        Me.txtrDD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtrDD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtrDD.Location = New System.Drawing.Point(440, 3)
+        Me.txtrDD.Name = "txtrDD"
+        Me.txtrDD.Size = New System.Drawing.Size(172, 29)
+        Me.txtrDD.TabIndex = 4
         '
         'txtcode
         '
@@ -271,11 +253,12 @@ Partial Class addscheduleadmin
         Me.txtcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcode.ForeColor = System.Drawing.Color.NavajoWhite
         Me.txtcode.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.txtcode.Location = New System.Drawing.Point(30, 0)
+        Me.txtcode.Location = New System.Drawing.Point(19, 0)
         Me.txtcode.Name = "txtcode"
-        Me.txtcode.Size = New System.Drawing.Size(66, 34)
+        Me.txtcode.Size = New System.Drawing.Size(122, 34)
         Me.txtcode.TabIndex = 8
         Me.txtcode.Text = "Room Name:"
+        Me.txtcode.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'txtroom
         '
@@ -285,11 +268,12 @@ Partial Class addscheduleadmin
         Me.txtroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtroom.ForeColor = System.Drawing.Color.NavajoWhite
         Me.txtroom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.txtroom.Location = New System.Drawing.Point(30, 34)
+        Me.txtroom.Location = New System.Drawing.Point(24, 34)
         Me.txtroom.Name = "txtroom"
-        Me.txtroom.Size = New System.Drawing.Size(66, 31)
+        Me.txtroom.Size = New System.Drawing.Size(117, 31)
         Me.txtroom.TabIndex = 9
         Me.txtroom.Text = "Room Code:"
+        Me.txtroom.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label4
         '
@@ -299,39 +283,12 @@ Partial Class addscheduleadmin
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.NavajoWhite
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label4.Location = New System.Drawing.Point(13, 65)
+        Me.Label4.Location = New System.Drawing.Point(7, 65)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 31)
+        Me.Label4.Size = New System.Drawing.Size(134, 31)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Building Letter:"
-        '
-        'txtdate
-        '
-        Me.txtdate.AutoSize = True
-        Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
-        Me.txtdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdate.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.txtdate.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.txtdate.Location = New System.Drawing.Point(364, 0)
-        Me.txtdate.Name = "txtdate"
-        Me.txtdate.Size = New System.Drawing.Size(53, 34)
-        Me.txtdate.TabIndex = 12
-        Me.txtdate.Text = "Date:"
-        '
-        'txtday
-        '
-        Me.txtday.AutoSize = True
-        Me.txtday.Dock = System.Windows.Forms.DockStyle.Right
-        Me.txtday.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtday.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtday.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.txtday.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.txtday.Location = New System.Drawing.Point(370, 34)
-        Me.txtday.Name = "txtday"
-        Me.txtday.Size = New System.Drawing.Size(47, 31)
-        Me.txtday.TabIndex = 13
-        Me.txtday.Text = "Day:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label8
         '
@@ -341,11 +298,21 @@ Partial Class addscheduleadmin
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.NavajoWhite
         Me.Label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label8.Location = New System.Drawing.Point(359, 65)
+        Me.Label8.Location = New System.Drawing.Point(376, 34)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(58, 31)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Time:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'cboDD
+        '
+        Me.cboDD.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboDD.FormattingEnabled = True
+        Me.cboDD.Location = New System.Drawing.Point(353, 3)
+        Me.cboDD.Name = "cboDD"
+        Me.cboDD.Size = New System.Drawing.Size(81, 21)
+        Me.cboDD.TabIndex = 15
         '
         'DGVrooms
         '
@@ -429,6 +396,53 @@ Partial Class addscheduleadmin
         Me.btnconfirm.Text = "Confirm"
         Me.btnconfirm.UseVisualStyleBackColor = True
         '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 3
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel6.Controls.Add(Me.cbominute, 1, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.cboampm, 2, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.cbohour, 0, 0)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(440, 37)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 1
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(172, 25)
+        Me.TableLayoutPanel6.TabIndex = 16
+        '
+        'cbominute
+        '
+        Me.cbominute.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbominute.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbominute.FormattingEnabled = True
+        Me.cbominute.Location = New System.Drawing.Point(60, 3)
+        Me.cbominute.Name = "cbominute"
+        Me.cbominute.Size = New System.Drawing.Size(51, 21)
+        Me.cbominute.TabIndex = 1
+        '
+        'cboampm
+        '
+        Me.cboampm.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboampm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboampm.FormattingEnabled = True
+        Me.cboampm.Location = New System.Drawing.Point(117, 3)
+        Me.cboampm.Name = "cboampm"
+        Me.cboampm.Size = New System.Drawing.Size(52, 21)
+        Me.cboampm.TabIndex = 2
+        '
+        'cbohour
+        '
+        Me.cbohour.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbohour.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbohour.FormattingEnabled = True
+        Me.cbohour.Location = New System.Drawing.Point(3, 3)
+        Me.cbohour.Name = "cbohour"
+        Me.cbohour.Size = New System.Drawing.Size(51, 21)
+        Me.cbohour.TabIndex = 17
+        '
         'addscheduleadmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -442,6 +456,7 @@ Partial Class addscheduleadmin
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "addscheduleadmin"
         Me.Text = "addscheduleadmin"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
@@ -450,6 +465,7 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.DGVrooms, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -463,15 +479,11 @@ Partial Class addscheduleadmin
     Friend WithEvents txtrname As TextBox
     Friend WithEvents txtrcode As TextBox
     Friend WithEvents txtbuilding As TextBox
-    Friend WithEvents txtrdate As TextBox
-    Friend WithEvents txtrday As TextBox
-    Friend WithEvents txtrtime As TextBox
+    Friend WithEvents txtrDD As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtcode As Label
     Friend WithEvents txtroom As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtdate As Label
-    Friend WithEvents txtday As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents btnback As Button
@@ -481,4 +493,9 @@ Partial Class addscheduleadmin
     Friend WithEvents DGVrooms As DataGridView
     Friend WithEvents btnadd As Button
     Friend WithEvents btnconfirm As Button
+    Friend WithEvents cboDD As ComboBox
+    Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
+    Friend WithEvents cbominute As ComboBox
+    Friend WithEvents cboampm As ComboBox
+    Friend WithEvents cbohour As ComboBox
 End Class
