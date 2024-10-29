@@ -24,7 +24,7 @@ Partial Class Admin
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnprofile = New System.Windows.Forms.Button()
         Me.btnlist = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnapproval = New System.Windows.Forms.Button()
@@ -65,7 +65,7 @@ Partial Class Admin
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Button5, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnprofile, 1, 2)
         Me.TableLayoutPanel2.Controls.Add(Me.btnlist, 1, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.Button2, 1, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.btnapproval, 1, 5)
@@ -87,20 +87,20 @@ Partial Class Admin
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(407, 435)
         Me.TableLayoutPanel2.TabIndex = 0
         '
-        'Button5
+        'btnprofile
         '
-        Me.Button5.AutoSize = True
-        Me.Button5.BackColor = System.Drawing.Color.Transparent
-        Me.Button5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.Button5.Location = New System.Drawing.Point(23, 119)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(361, 54)
-        Me.Button5.TabIndex = 27
-        Me.Button5.Text = "Welcome, (Name)"
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.btnprofile.AutoSize = True
+        Me.btnprofile.BackColor = System.Drawing.Color.Transparent
+        Me.btnprofile.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnprofile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnprofile.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnprofile.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.btnprofile.Location = New System.Drawing.Point(23, 119)
+        Me.btnprofile.Name = "btnprofile"
+        Me.btnprofile.Size = New System.Drawing.Size(361, 54)
+        Me.btnprofile.TabIndex = 27
+        Me.btnprofile.Text = "Welcome, (Name)"
+        Me.btnprofile.UseVisualStyleBackColor = False
         '
         'btnlist
         '
@@ -286,7 +286,7 @@ Partial Class Admin
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnprofile As Button
     Friend WithEvents btnlist As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents btnapproval As Button

@@ -3,13 +3,16 @@ Imports System.Windows.Forms
 Imports System.Data
 Imports ConnectionModule
 Public Class Admin
+    Public Property U_ID As String
     Private Sub Admin_load(sender As Object, e As EventArgs) Handles MyBase.Load
         If conn.State = ConnectionState.Open Then
             conn.Close()
         End If
+        MessageBox.Show(U_ID)
         DbConnect()
         report()
         feedback()
+        accountname_reload()
         FormatDataGridViews_report()
         FormatDataGridViews_feedback()
     End Sub
@@ -199,5 +202,36 @@ Public Class Admin
             End Try
         End Using
     End Sub
+
+    Private Sub accountname_reload()
+        Dim query As String = "SELECT username FROM accounts WHERE ID = @U_ID"
+        Using command As New MySqlCommand(query, conn)
+            command.Parameters.AddWithValue("@U_ID", U_ID)
+            Try
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
+
+                ' Execute the query and get the username
+                Dim result As Object = command.ExecuteScalar()
+
+                ' Check if the result is not null (Nothing)
+                If result IsNot Nothing Then
+                    Dim username As String = result.ToString()
+                    ' Update the button's text with the welcome message
+                    btnprofile.Text = "Welcome " & username
+                Else
+                    ' Handle case where no username is found
+                    MessageBox.Show("No username found for the provided ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show("Error retrieving username from database! Error: " & ex.Message)
+            Finally
+                conn.Close()
+            End Try
+        End Using
+    End Sub
+
 
 End Class

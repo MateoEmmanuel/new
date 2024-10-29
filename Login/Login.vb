@@ -63,7 +63,6 @@ Public Class Login
         Next
     End Sub
 
-
     Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
         Dim username As String = txtuname.Text.Trim()
         Dim password As String = txtpassword.Text.Trim()
@@ -79,46 +78,53 @@ Public Class Login
                 DbConnect()
             End If
 
-            ' Combine the login and account level query in one
-            Dim query As String = "SELECT accesslevel FROM accounts WHERE username=@username AND pword=@pword"
+            ' Query to retrieve the ID and access level
+            Dim query As String = "SELECT ID, accesslevel FROM accounts WHERE username=@username AND pword=@pword"
             Dim command As New MySqlCommand(query, conn)
 
             ' Add parameters to the command
             command.Parameters.AddWithValue("@username", username)
             command.Parameters.AddWithValue("@pword", password)
 
-            ' Execute the query and check if user exists
+            ' Execute the query and check if the user exists
             Using reader As MySqlDataReader = command.ExecuteReader()
                 If reader.HasRows Then
                     reader.Read() ' Move to the first row
+                    Dim accountId As String = reader("ID").ToString() ' Get the ID of the account as a string
                     Dim accountlevel As String = reader("accesslevel").ToString().ToLower() ' Get account level in lowercase
 
-                    ' Close the reader as it's no longer needed
-                    reader.Close()
+                    reader.Close() ' Close the reader as it's no longer needed
 
-                    ' Open different forms based on account level
+                    ' Open different forms based on account level and pass the ID
                     Select Case accountlevel
                         Case "low"
                             Dim low As New Student()
-                            low.Show() ' Open Form3 for low level account UI
+                            ' low.U_ID = accountId
+                            low.Show() ' Open Form for low-level account UI
                             Me.Hide() ' Hide current form
                             MsgBox("Welcome " & username)
                             txtpassword.Clear()
                             txtuname.Clear()
+
                         Case "mid"
                             Dim mid As New Staff()
-                            mid.Show() ' Open Form4 for mid level account UI
+                            ' mid.U_ID = accountId
+                            mid.Show() ' Open Form for mid-level account UI
                             Me.Hide() ' Hide current form
                             MsgBox("Welcome " & username)
                             txtpassword.Clear()
                             txtuname.Clear()
+
                         Case "high"
+                            ' Create the Admin form, assign U_ID and show it
                             Dim high As New Admin()
-                            high.Show() ' Open Form5 for high level account UI
+                            high.U_ID = accountId ' Pass the account ID to the Admin form
+                            high.Show() ' Open Form for high-level account UI
                             Me.Hide() ' Hide current form
                             MsgBox("Welcome " & username)
                             txtpassword.Clear()
                             txtuname.Clear()
+
                         Case Else
                             MsgBox("Error: Account level not recognized")
                     End Select
@@ -138,6 +144,10 @@ Public Class Login
             End If
         End Try
     End Sub
+
+
+
+
 
 
     Private Sub btncreate_Click(sender As Object, e As EventArgs) Handles btncreate.Click
