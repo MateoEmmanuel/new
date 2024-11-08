@@ -2,8 +2,9 @@
 Imports System.Windows.Forms
 Imports System.Data
 Imports ConnectionModule
+Imports UniversalDim
 Public Class addscheduleadmin
-
+    Public Property U_ID As String
     Public Property rDate As String
     Public Property rTime As String
     Public Property rRoom As String

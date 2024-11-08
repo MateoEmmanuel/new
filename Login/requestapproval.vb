@@ -2,9 +2,10 @@
 Imports System.Windows.Forms
 Imports System.Data
 Imports ConnectionModule
+Imports UniversalDim
 
 Public Class requestapproval
-
+    Public Property U_ID As String
     Private Sub requestapproval_loader(sender As Object, e As EventArgs) Handles MyBase.Load
         If conn.State = ConnectionState.Open Then
             conn.Close()

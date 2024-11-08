@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports ConnectionModule
+Imports UniversalDim
 
 Public Class Login
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -99,7 +100,7 @@ Public Class Login
                     Select Case accountlevel
                         Case "low"
                             Dim low As New Student()
-                            ' low.U_ID = accountId
+                            UniversalDim.U_ID = accountId
                             low.Show() ' Open Form for low-level account UI
                             Me.Hide() ' Hide current form
                             MsgBox("Welcome " & username)
@@ -108,7 +109,7 @@ Public Class Login
 
                         Case "mid"
                             Dim mid As New Staff()
-                            ' mid.U_ID = accountId
+                            UniversalDim.U_ID = accountId
                             mid.Show() ' Open Form for mid-level account UI
                             Me.Hide() ' Hide current form
                             MsgBox("Welcome " & username)
@@ -118,7 +119,8 @@ Public Class Login
                         Case "high"
                             ' Create the Admin form, assign U_ID and show it
                             Dim high As New Admin()
-                            high.U_ID = accountId ' Pass the account ID to the Admin form
+                            UniversalDim.U_ID = accountId
+                            ' Pass the account ID to the Admin form
                             high.Show() ' Open Form for high-level account UI
                             Me.Hide() ' Hide current form
                             MsgBox("Welcome " & username)
