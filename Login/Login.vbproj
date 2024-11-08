@@ -137,12 +137,6 @@
     <Compile Include="addscheduleadmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteFeedbackReport.Designer.vb">
-      <DependentUpon>DeleteFeedbackReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteFeedbackReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -203,10 +197,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UniversalDim.vb" />
-    <Compile Include="ViewFeedbackReport.Designer.vb">
-      <DependentUpon>ViewFeedbackReport.vb</DependentUpon>
+    <Compile Include="ViewFeedbackReort.Designer.vb">
+      <DependentUpon>ViewFeedbackReort.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewFeedbackReport.vb">
+    <Compile Include="ViewFeedbackReort.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -216,9 +210,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addscheduleadmin.resx">
       <DependentUpon>addscheduleadmin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteFeedbackReport.resx">
-      <DependentUpon>DeleteFeedbackReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -247,8 +238,8 @@
     <EmbeddedResource Include="roomlist.resx">
       <DependentUpon>roomlist.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewFeedbackReport.resx">
-      <DependentUpon>ViewFeedbackReport.vb</DependentUpon>
+    <EmbeddedResource Include="ViewFeedbackReort.resx">
+      <DependentUpon>ViewFeedbackReort.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

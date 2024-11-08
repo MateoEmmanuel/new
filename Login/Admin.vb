@@ -118,16 +118,25 @@ Public Class Admin
 
         If columnName = "ReportView" Then
             ' Show the View Report form
-            Dim viewReportForm As New ViewFeedbackReport()
-            ViewFeedbackReport.report_Id = reportId
+            Dim viewReportForm As New ViewFeedbackReort()
+            ViewFeedbackReort.report_Id = reportId
             viewReportForm.Show()
             Me.Hide()
         ElseIf columnName = "ReportDelete" Then
-            ' Show the Delete Report form
-            Dim deleteReportForm As New DeleteFeedbackReport()
-            DeleteFeedbackReport.report_Id = reportId
-            deleteReportForm.Show()
-            Me.Hide()
+            Dim query As String = "DELETE FROM report WHERE ID = @reportId"
+            Using command As New MySqlCommand(query, conn)
+                command.Parameters.AddWithValue("@reportId", reportId)
+                Try
+                    If conn.State = ConnectionState.Closed Then
+                        conn.Open()
+                    End If
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show("Error deleting report: " & ex.Message)
+                Finally
+                    conn.Close()
+                End Try
+            End Using
         End If
     End Sub
 
@@ -140,16 +149,25 @@ Public Class Admin
 
         If columnName = "FeedbackView" Then
             ' Show the View Feedback form
-            Dim viewFeedbackForm As New ViewFeedbackReport()
-            ViewFeedbackReport.feedback_Id = feedbackId
+            Dim viewFeedbackForm As New ViewFeedbackReort()
+            ViewFeedbackReort.feedback_Id = feedbackId
             viewFeedbackForm.Show()
             Me.Hide()
         ElseIf columnName = "FeedbackDelete" Then
-            ' Show the Delete Feedback form
-            Dim deleteFeedbackForm As New DeleteFeedbackReport()
-            DeleteFeedbackReport.feedback_Id = feedbackId
-            deleteFeedbackForm.Show()
-            Me.Hide()
+            Dim query As String = "DELETE FROM feedback WHERE ID = @feedbackId"
+            Using command As New MySqlCommand(query, conn)
+                command.Parameters.AddWithValue("@feedbackId", feedbackId)
+                Try
+                    If conn.State = ConnectionState.Closed Then
+                        conn.Open()
+                    End If
+                    command.ExecuteNonQuery()
+                Catch ex As Exception
+                    MessageBox.Show("Error deleting feedback: " & ex.Message)
+                Finally
+                    conn.Close()
+                End Try
+            End Using
         End If
     End Sub
 
@@ -174,42 +192,6 @@ Public Class Admin
     Private Sub btnapproval_Click(sender As Object, e As EventArgs) Handles btnapproval.Click
         requestapproval.Show()
         Me.Hide()
-    End Sub
-
-    ' Sample deletion method (implement as needed)
-    Private Sub DeleteReport(reportId As String)
-        Dim query As String = "DELETE FROM report WHERE report_id = @reportId"
-        Using command As New MySqlCommand(query, conn)
-            command.Parameters.AddWithValue("@reportId", reportId)
-            Try
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                command.ExecuteNonQuery()
-            Catch ex As Exception
-                MessageBox.Show("Error deleting report: " & ex.Message)
-            Finally
-                conn.Close()
-            End Try
-        End Using
-    End Sub
-
-    ' Sample deletion method (implement as needed)
-    Private Sub DeleteFeedback(feedbackId As String)
-        Dim query As String = "DELETE FROM feedback WHERE feedback_id = @feedbackId"
-        Using command As New MySqlCommand(query, conn)
-            command.Parameters.AddWithValue("@feedbackId", feedbackId)
-            Try
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-                command.ExecuteNonQuery()
-            Catch ex As Exception
-                MessageBox.Show("Error deleting feedback: " & ex.Message)
-            Finally
-                conn.Close()
-            End Try
-        End Using
     End Sub
 
     Private Sub accountname_reload()
