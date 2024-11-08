@@ -53,7 +53,6 @@ Public Class ViewFeedbackReport
         End Try
     End Sub
 
-
     ' Separate method to load feedback data
     Public Sub loadFeedback(feedback_ID As String)
         Dim query As String = "SELECT sender, d, t, feedback FROM feedback WHERE ID = @feedbackID"
