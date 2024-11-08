@@ -118,8 +118,8 @@ Public Class Admin
 
         If columnName = "ReportView" Then
             ' Show the View Report form
-            Dim viewReportForm As New ViewFeedbackReort()
-            ViewFeedbackReort.report_Id = reportId
+            Dim viewReportForm As New ViewFeedbackReport()
+            ViewFeedbackReport.report_Id = reportId
             viewReportForm.Show()
             Me.Hide()
         ElseIf columnName = "ReportDelete" Then
@@ -149,8 +149,8 @@ Public Class Admin
 
         If columnName = "FeedbackView" Then
             ' Show the View Feedback form
-            Dim viewFeedbackForm As New ViewFeedbackReort()
-            ViewFeedbackReort.feedback_Id = feedbackId
+            Dim viewFeedbackForm As New ViewFeedbackReport()
+            ViewFeedbackReport.feedback_ID = feedbackId
             viewFeedbackForm.Show()
             Me.Hide()
         ElseIf columnName = "FeedbackDelete" Then
