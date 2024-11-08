@@ -117,7 +117,8 @@ Public Class Admin
     End Sub
 
     Private Sub btnmanagement_Click(sender As Object, e As EventArgs) Handles btnmanagement.Click
-
+        AccountManagement.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnapproval_Click(sender As Object, e As EventArgs) Handles btnapproval.Click
@@ -233,4 +234,11 @@ Public Class Admin
         End Using
     End Sub
 
+    Private Sub btnprofile_Click(sender As Object, e As EventArgs) Handles btnprofile.Click
+
+    End Sub
+
+    Private Sub DGVreport_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVreport.CellContentClick
+
+    End Sub
 End Class
