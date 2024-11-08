@@ -1,11 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Windows.Forms
 Imports System.Data
-Imports ConnectionModule
-Imports UniversalDim
 
 Public Class Admin
-    Public Property U_ID As String
 
     Private Sub Admin_load(sender As Object, e As EventArgs) Handles MyBase.Load
         If conn.State = ConnectionState.Open Then
@@ -109,66 +106,46 @@ Public Class Admin
         Next
     End Sub
 
-    ' Event handler for when a button inside the DataGridView is clicked
-    Private Sub DGVreport_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVreport.CellContentClick
-        If e.RowIndex < 0 Then Return ' Avoid clicking on header row
+    Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVreport.CellContentClick, DGVfeedback.CellContentClick
+        If e.RowIndex < 0 Then Return ' Avoid header row
 
-        Dim columnName As String = DGVreport.Columns(e.ColumnIndex).Name
-        Dim reportId As String = DGVreport.Rows(e.RowIndex).Cells("ReportID").Value.ToString()
+        Dim dgv As DataGridView = CType(sender, DataGridView)
+        Dim id As String = dgv.Rows(e.RowIndex).Cells(0).Value.ToString() ' Assuming ID is the first column
 
-        If columnName = "ReportView" Then
-            ' Show the View Report form
-            Dim viewReportForm As New ViewFeedbackReport()
-            ViewFeedbackReport.report_Id = reportId
-            viewReportForm.Show()
+        If dgv.Columns(e.ColumnIndex).Name.Contains("View") Then
+            Dim viewForm As New ViewFeedbackReport()
+            If dgv.Name = "DGVreport" Then
+                viewForm.report_ID = id
+            Else
+                viewForm.feedback_ID = id
+            End If
+            viewForm.Show()
             Me.Hide()
-        ElseIf columnName = "ReportDelete" Then
-            Dim query As String = "DELETE FROM report WHERE ID = @reportId"
-            Using command As New MySqlCommand(query, conn)
-                command.Parameters.AddWithValue("@reportId", reportId)
-                Try
-                    If conn.State = ConnectionState.Closed Then
-                        conn.Open()
-                    End If
-                    command.ExecuteNonQuery()
-                Catch ex As Exception
-                    MessageBox.Show("Error deleting report: " & ex.Message)
-                Finally
-                    conn.Close()
-                End Try
-            End Using
+
+        ElseIf dgv.Columns(e.ColumnIndex).Name.Contains("Delete") Then
+            Dim tableName As String = If(dgv.Name = "DGVreport", "report", "feedback")
+            DeleteRecord(tableName, id)
         End If
     End Sub
 
-    ' Event handler for when a button inside the DataGridView is clicked for feedback
-    Private Sub DGVfeedback_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVfeedback.CellContentClick
-        If e.RowIndex < 0 Then Return ' Avoid clicking on header row
-
-        Dim columnName As String = DGVfeedback.Columns(e.ColumnIndex).Name
-        Dim feedbackId As String = DGVfeedback.Rows(e.RowIndex).Cells("FeedbackID").Value.ToString()
-
-        If columnName = "FeedbackView" Then
-            ' Show the View Feedback form
-            Dim viewFeedbackForm As New ViewFeedbackReport()
-            ViewFeedbackReport.feedback_ID = feedbackId
-            viewFeedbackForm.Show()
-            Me.Hide()
-        ElseIf columnName = "FeedbackDelete" Then
-            Dim query As String = "DELETE FROM feedback WHERE ID = @feedbackId"
-            Using command As New MySqlCommand(query, conn)
-                command.Parameters.AddWithValue("@feedbackId", feedbackId)
-                Try
-                    If conn.State = ConnectionState.Closed Then
-                        conn.Open()
-                    End If
-                    command.ExecuteNonQuery()
-                Catch ex As Exception
-                    MessageBox.Show("Error deleting feedback: " & ex.Message)
-                Finally
-                    conn.Close()
-                End Try
-            End Using
-        End If
+    Private Sub DeleteRecord(tableName As String, id As String)
+        Dim query As String = $"DELETE FROM {tableName} WHERE ID = @id"
+        Using command As New MySqlCommand(query, conn)
+            command.Parameters.AddWithValue("@id", id)
+            Try
+                If conn.State = ConnectionState.Closed Then
+                    conn.Open()
+                End If
+                command.ExecuteNonQuery()
+                MessageBox.Show($"{tableName} record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show($"Error deleting {tableName} record: " & ex.Message)
+            Finally
+                conn.Close()
+                report()
+                feedback()
+            End Try
+        End Using
     End Sub
 
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click

@@ -25,15 +25,15 @@ Partial Class ViewFeedbackReport
         Me.txtsender = New System.Windows.Forms.TextBox()
         Me.txtcode = New System.Windows.Forms.Label()
         Me.btnback = New System.Windows.Forms.Button()
-        Me.DGVtext = New System.Windows.Forms.DataGridView()
+        Me.DGVtextbox = New System.Windows.Forms.DataGridView()
         Me.txttype = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Text = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txttime = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        CType(Me.DGVtext, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.sendertext = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.DGVtextbox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtsender
@@ -74,23 +74,23 @@ Partial Class ViewFeedbackReport
         Me.btnback.Text = "Back"
         Me.btnback.UseVisualStyleBackColor = False
         '
-        'DGVtext
+        'DGVtextbox
         '
-        Me.DGVtext.AllowUserToAddRows = False
-        Me.DGVtext.AllowUserToDeleteRows = False
-        Me.DGVtext.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGVtext.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DGVtext.BackgroundColor = System.Drawing.Color.DodgerBlue
-        Me.DGVtext.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
-        Me.DGVtext.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVtext.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Text})
-        Me.DGVtext.Location = New System.Drawing.Point(12, 129)
-        Me.DGVtext.MultiSelect = False
-        Me.DGVtext.Name = "DGVtext"
-        Me.DGVtext.ReadOnly = True
-        Me.DGVtext.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.DGVtext.Size = New System.Drawing.Size(414, 225)
-        Me.DGVtext.TabIndex = 43
+        Me.DGVtextbox.AllowUserToAddRows = False
+        Me.DGVtextbox.AllowUserToDeleteRows = False
+        Me.DGVtextbox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGVtextbox.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGVtextbox.BackgroundColor = System.Drawing.Color.DodgerBlue
+        Me.DGVtextbox.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
+        Me.DGVtextbox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVtextbox.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.sendertext})
+        Me.DGVtextbox.Location = New System.Drawing.Point(12, 129)
+        Me.DGVtextbox.MultiSelect = False
+        Me.DGVtextbox.Name = "DGVtextbox"
+        Me.DGVtextbox.ReadOnly = True
+        Me.DGVtextbox.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        Me.DGVtextbox.Size = New System.Drawing.Size(414, 225)
+        Me.DGVtextbox.TabIndex = 43
         '
         'txttype
         '
@@ -140,13 +140,6 @@ Partial Class ViewFeedbackReport
         Me.Label3.Text = "Date:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Text
-        '
-        Me.Text.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Text.HeaderText = "Text"
-        Me.Text.Name = "Text"
-        Me.Text.ReadOnly = True
-        '
         'txttime
         '
         Me.txttime.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -171,7 +164,14 @@ Partial Class ViewFeedbackReport
         Me.Label2.Text = "Time:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'ViewFeedbackReort
+        'sendertext
+        '
+        Me.sendertext.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.sendertext.HeaderText = "Text"
+        Me.sendertext.Name = "sendertext"
+        Me.sendertext.ReadOnly = True
+        '
+        'ViewFeedbackReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -187,10 +187,10 @@ Partial Class ViewFeedbackReport
         Me.Controls.Add(Me.txtsender)
         Me.Controls.Add(Me.txtcode)
         Me.Controls.Add(Me.btnback)
-        Me.Controls.Add(Me.DGVtext)
+        Me.Controls.Add(Me.DGVtextbox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "ViewFeedbackReort"
-        CType(Me.DGVtext, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "ViewFeedbackReport"
+        CType(Me.DGVtextbox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,12 +199,12 @@ Partial Class ViewFeedbackReport
     Friend WithEvents txtsender As TextBox
     Friend WithEvents txtcode As Label
     Friend WithEvents btnback As Button
-    Friend WithEvents DGVtext As DataGridView
-    Friend WithEvents Text As DataGridViewTextBoxColumn
+    Friend WithEvents DGVtextbox As DataGridView
     Friend WithEvents txttype As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtdate As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txttime As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents sendertext As DataGridViewTextBoxColumn
 End Class

@@ -1,6 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports ConnectionModule
-Imports UniversalDim
 
 Public Class Login
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

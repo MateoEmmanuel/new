@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports ConnectionModule
 Public Class accountcreationlow
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Create a new TableLayoutPanel and set Dock to fill the form

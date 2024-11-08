@@ -1,8 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Windows.Forms
 Imports System.Data
-Imports ConnectionModule
-Imports UniversalDim
 
 Public Class requestapproval
     Public Property U_ID As String

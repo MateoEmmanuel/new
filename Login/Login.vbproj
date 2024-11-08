@@ -150,7 +150,6 @@
     <Compile Include="accountcreationlow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.vb" />
     <Compile Include="requestapproval.Designer.vb">
       <DependentUpon>requestapproval.vb</DependentUpon>
     </Compile>
@@ -218,18 +217,6 @@
     <EmbeddedResource Include="accountcreationlow.resx">
       <DependentUpon>accountcreationlow.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\Login.accountcreationlow.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.AccountManagement.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.addscheduleadmin.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.Admin.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.Login.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.requestapproval.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.roomlist.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.Staff.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.Student.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.ViewFeedbackReort.resources" />
-    <EmbeddedResource Include="obj\Debug\Login.ViewFeedbackReport.resources" />
     <EmbeddedResource Include="requestapproval.resx">
       <DependentUpon>requestapproval.vb</DependentUpon>
     </EmbeddedResource>
@@ -256,7 +243,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Login.exe.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -267,12 +253,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\Login.vbproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\Login.vbproj.CopyComplete" />
-    <None Include="obj\Debug\Login.vbproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\Login.vbproj.GenerateResource.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -281,51 +261,6 @@
   <ItemGroup>
     <None Include="Resources\FB_IMG_1729211691620.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\BouncyCastle.Cryptography.dll" />
-    <Content Include="bin\Debug\BouncyCastle.Cryptography.xml" />
-    <Content Include="bin\Debug\Google.Protobuf.dll" />
-    <Content Include="bin\Debug\Google.Protobuf.pdb" />
-    <Content Include="bin\Debug\Google.Protobuf.xml" />
-    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
-    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
-    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.xml" />
-    <Content Include="bin\Debug\K4os.Compression.LZ4.xml" />
-    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
-    <Content Include="bin\Debug\K4os.Hash.xxHash.xml" />
-    <Content Include="bin\Debug\Login.exe" />
-    <Content Include="bin\Debug\Login.pdb" />
-    <Content Include="bin\Debug\Login.xml" />
-    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll" />
-    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
-    <Content Include="bin\Debug\MySql.Data.dll" />
-    <Content Include="bin\Debug\MySql.Data.xml" />
-    <Content Include="bin\Debug\System.Buffers.dll" />
-    <Content Include="bin\Debug\System.Buffers.xml" />
-    <Content Include="bin\Debug\System.Configuration.ConfigurationManager.dll" />
-    <Content Include="bin\Debug\System.Configuration.ConfigurationManager.xml" />
-    <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\Debug\System.Diagnostics.DiagnosticSource.xml" />
-    <Content Include="bin\Debug\System.IO.Pipelines.dll" />
-    <Content Include="bin\Debug\System.IO.Pipelines.xml" />
-    <Content Include="bin\Debug\System.Memory.dll" />
-    <Content Include="bin\Debug\System.Memory.xml" />
-    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
-    <Content Include="bin\Debug\System.Numerics.Vectors.xml" />
-    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
-    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
-    <Content Include="bin\Debug\ZstdSharp.dll" />
-    <Content Include="obj\Debug\Login.exe" />
-    <Content Include="obj\Debug\Login.pdb" />
-    <Content Include="obj\Debug\Login.vbproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Login.xml" />
-    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
