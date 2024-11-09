@@ -27,13 +27,21 @@ Partial Class requestapproval
         Me.btnback = New System.Windows.Forms.Button()
         Me.btndelete = New System.Windows.Forms.Button()
         Me.btnadd = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.DGVrequest = New System.Windows.Forms.DataGridView()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnrequestreload = New System.Windows.Forms.Button()
+        Me.requestID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.requesterID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.requestdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.requesttime = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.room = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.timerequest_in = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.timerequest_out = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.requesttext = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.DGVrequest, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -123,6 +131,20 @@ Partial Class requestapproval
         Me.btnadd.Text = "Add"
         Me.btnadd.UseVisualStyleBackColor = False
         '
+        'DGVrequest
+        '
+        Me.DGVrequest.AllowUserToAddRows = False
+        Me.DGVrequest.AllowUserToDeleteRows = False
+        Me.DGVrequest.BackgroundColor = System.Drawing.Color.DodgerBlue
+        Me.DGVrequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVrequest.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.requestID, Me.requesterID, Me.requestdate, Me.requesttime, Me.room, Me.timerequest_in, Me.timerequest_out, Me.requesttext})
+        Me.DGVrequest.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGVrequest.Location = New System.Drawing.Point(23, 175)
+        Me.DGVrequest.Name = "DGVrequest"
+        Me.DGVrequest.ReadOnly = True
+        Me.DGVrequest.Size = New System.Drawing.Size(754, 207)
+        Me.DGVrequest.TabIndex = 8
+        '
         'TableLayoutPanel4
         '
         Me.TableLayoutPanel4.ColumnCount = 1
@@ -137,16 +159,6 @@ Partial Class requestapproval
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.44526!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(754, 146)
         Me.TableLayoutPanel4.TabIndex = 4
-        '
-        'DGVrequest
-        '
-        Me.DGVrequest.BackgroundColor = System.Drawing.Color.DodgerBlue
-        Me.DGVrequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVrequest.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGVrequest.Location = New System.Drawing.Point(23, 175)
-        Me.DGVrequest.Name = "DGVrequest"
-        Me.DGVrequest.Size = New System.Drawing.Size(754, 207)
-        Me.DGVrequest.TabIndex = 8
         '
         'btnrequestreload
         '
@@ -165,6 +177,72 @@ Partial Class requestapproval
         Me.btnrequestreload.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnrequestreload.UseVisualStyleBackColor = False
         '
+        'requestID
+        '
+        Me.requestID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.requestID.FillWeight = 20.30457!
+        Me.requestID.HeaderText = "Request ID"
+        Me.requestID.Name = "requestID"
+        Me.requestID.ReadOnly = True
+        '
+        'requesterID
+        '
+        Me.requesterID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.requesterID.FillWeight = 20.30457!
+        Me.requesterID.HeaderText = "Requester"
+        Me.requesterID.Name = "requesterID"
+        Me.requesterID.ReadOnly = True
+        Me.requesterID.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        '
+        'requestdate
+        '
+        Me.requestdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.requestdate.FillWeight = 20.30457!
+        Me.requestdate.HeaderText = "Date Requested"
+        Me.requestdate.Name = "requestdate"
+        Me.requestdate.ReadOnly = True
+        '
+        'requesttime
+        '
+        Me.requesttime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.requesttime.FillWeight = 20.30457!
+        Me.requesttime.HeaderText = "Time"
+        Me.requesttime.Name = "requesttime"
+        Me.requesttime.ReadOnly = True
+        '
+        'room
+        '
+        Me.room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.room.FillWeight = 20.30457!
+        Me.room.HeaderText = "Room Requested"
+        Me.room.Name = "room"
+        Me.room.ReadOnly = True
+        '
+        'timerequest_in
+        '
+        Me.timerequest_in.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.timerequest_in.FillWeight = 20.30457!
+        Me.timerequest_in.HeaderText = "Time-In"
+        Me.timerequest_in.Name = "timerequest_in"
+        Me.timerequest_in.ReadOnly = True
+        '
+        'timerequest_out
+        '
+        Me.timerequest_out.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.timerequest_out.FillWeight = 20.30457!
+        Me.timerequest_out.HeaderText = "Time-Out"
+        Me.timerequest_out.Name = "timerequest_out"
+        Me.timerequest_out.ReadOnly = True
+        '
+        'requesttext
+        '
+        Me.requesttext.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.requesttext.FillWeight = 657.868!
+        Me.requesttext.HeaderText = "Request Message"
+        Me.requesttext.MinimumWidth = 200
+        Me.requesttext.Name = "requesttext"
+        Me.requesttext.ReadOnly = True
+        '
         'requestapproval
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -182,9 +260,9 @@ Partial Class requestapproval
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
+        CType(Me.DGVrequest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
-        CType(Me.DGVrequest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -197,4 +275,12 @@ Partial Class requestapproval
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents DGVrequest As DataGridView
     Friend WithEvents btnrequestreload As Button
+    Friend WithEvents requestID As DataGridViewTextBoxColumn
+    Friend WithEvents requesterID As DataGridViewTextBoxColumn
+    Friend WithEvents requestdate As DataGridViewTextBoxColumn
+    Friend WithEvents requesttime As DataGridViewTextBoxColumn
+    Friend WithEvents room As DataGridViewTextBoxColumn
+    Friend WithEvents timerequest_in As DataGridViewTextBoxColumn
+    Friend WithEvents timerequest_out As DataGridViewTextBoxColumn
+    Friend WithEvents requesttext As DataGridViewTextBoxColumn
 End Class

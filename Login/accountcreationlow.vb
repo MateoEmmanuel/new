@@ -63,7 +63,7 @@ Public Class accountcreationlow
                 DbConnect()
             End If
 
-            Dim query As String = "insert into accounts (username,pword,fname,lname,ID,accesslevel) values (@username,@pword,@fname,@lname,@ID,'Low');"
+            Dim query As String = "insert into accounts (username,pword,fname,lname,ID,accesslevel) values (@username,@pword,@fname,@lname,@ID,@level);"
             Dim logging As New MySqlCommand(query, conn)
 
             ' Add parameters to the command
@@ -72,7 +72,7 @@ Public Class accountcreationlow
             logging.Parameters.AddWithValue("@fname", fname)
             logging.Parameters.AddWithValue("@lname", lname)
             logging.Parameters.AddWithValue("@ID", id)
-
+            logging.Parameters.AddWithValue("@level", "Low")
             ' adding to mysql database
             Dim rowsAffected As Integer = logging.ExecuteNonQuery()
             If rowsAffected > 0 Then

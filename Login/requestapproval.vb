@@ -9,7 +9,6 @@ Public Class requestapproval
             conn.Close()
         End If
         LoadRequests()
-        LoadSchedules()
     End Sub
 
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
@@ -18,7 +17,7 @@ Public Class requestapproval
         If result = DialogResult.Yes Then
             ' If a row is selected in the schedules DataGridView
             If DGVrequest.SelectedRows.Count > 0 Then
-                Dim selectedRow As DataGridViewRow = DGVschedules.SelectedRows(0)
+                Dim selectedRow As DataGridViewRow = DGVrequest.SelectedRows(0)
 
                 ' Create an instance of the add schedule form and pass selected data
                 Dim addForm As New addscheduleadmin()
@@ -47,15 +46,6 @@ Public Class requestapproval
             If result = DialogResult.Yes Then
                 DeleteRequest(selectedRequestID)
             End If
-        ElseIf DGVschedules.SelectedRows.Count > 0 Then
-            Dim selectedShedID As Integer = Convert.ToInt32(DGVschedules.SelectedRows(0).Cells("shed_id").Value)
-
-            ' Confirm deletion of schedule
-            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete the selected schedule?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-            If result = DialogResult.Yes Then
-                DeleteSchedule(selectedShedID)
-            End If
         Else
             MessageBox.Show("Please select a row to delete.")
         End If
@@ -83,41 +73,50 @@ Public Class requestapproval
         End Using
     End Sub
 
-    ' Delete schedule by ID
-    Private Sub DeleteSchedule(shedID As Integer)
-        Dim query As String = "DELETE FROM sched WHERE shed_id = @shed_id"
-        Using cmd As New MySqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@shed_id", shedID)
-
-            Try
-                If conn.State = ConnectionState.Closed Then
-                    conn.Open()
-                End If
-
-                cmd.ExecuteNonQuery()
-                LoadRequests()
-                MessageBox.Show("Schedule deleted successfully.")
-            Catch ex As Exception
-                MessageBox.Show("Error deleting schedule: " & ex.Message)
-            Finally
-                conn.Close()
-            End Try
-        End Using
-    End Sub
-
     ' Load requests from the database and bind to DataGridView
     Private Sub LoadRequests()
-        Dim query As String = "SELECT request_d, request_t, room, request, requestID FROM requests"
-        Using adapter As New MySqlDataAdapter(query, conn)
-            Dim table As New DataTable()
-            Try
-                adapter.Fill(table)
-                DGVrequest.DataSource = table
-            Catch ex As Exception
-                MessageBox.Show("Error retrieving requests: " & ex.Message)
-            End Try
-        End Using
+        ' Query to select necessary columns (requestID, requesterID, request_d, request_t, room, request_t_in, request_t_out, request)
+        Dim query As String = "SELECT requestID, requesterID, request_d, request_t, room, request_t_in, request_t_out, request FROM requests"
+        Dim adapter As New MySqlDataAdapter(query, conn)
+        Dim table As New DataTable()
+
+        Try
+            ' Fill the DataTable with data from the requests table
+            adapter.Fill(table)
+
+            ' Set AutoGenerateColumns to False to avoid extra columns
+            DGVrequest.AutoGenerateColumns = False
+
+            ' Bind the DataTable to the DataGridView
+            DGVrequest.DataSource = table
+
+            ' Manually map the data to the existing columns in the DataGridView
+            For Each column As DataGridViewColumn In DGVrequest.Columns
+                If column.Name = "requestID" Then
+                    column.DataPropertyName = "requestID"
+                ElseIf column.Name = "requesterID" Then
+                    column.DataPropertyName = "requesterID"
+                ElseIf column.Name = "requestdate" Then
+                    column.DataPropertyName = "request_d"
+                ElseIf column.Name = "requesttime" Then
+                    column.DataPropertyName = "request_t"
+                ElseIf column.Name = "room" Then
+                    column.DataPropertyName = "room"
+                ElseIf column.Name = "timerequest_in" Then
+                    column.DataPropertyName = "request_t_in"
+                ElseIf column.Name = "timerequest_out" Then
+                    column.DataPropertyName = "request_t_out"
+                ElseIf column.Name = "requesttext" Then
+                    column.DataPropertyName = "request"
+                End If
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Error retrieving requests: " & ex.Message)
+        End Try
     End Sub
+
+
     Private Sub btnback_Click(sender As Object, e As EventArgs) Handles btnback.Click
         Admin.Show()
         Me.Hide()
