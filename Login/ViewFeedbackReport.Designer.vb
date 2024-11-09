@@ -26,13 +26,13 @@ Partial Class ViewFeedbackReport
         Me.txtcode = New System.Windows.Forms.Label()
         Me.btnback = New System.Windows.Forms.Button()
         Me.DGVtextbox = New System.Windows.Forms.DataGridView()
+        Me.sendertext = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txttype = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txttime = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.sendertext = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGVtextbox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -91,6 +91,13 @@ Partial Class ViewFeedbackReport
         Me.DGVtextbox.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DGVtextbox.Size = New System.Drawing.Size(414, 225)
         Me.DGVtextbox.TabIndex = 43
+        '
+        'sendertext
+        '
+        Me.sendertext.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.sendertext.HeaderText = "Text"
+        Me.sendertext.Name = "sendertext"
+        Me.sendertext.ReadOnly = True
         '
         'txttype
         '
@@ -163,13 +170,6 @@ Partial Class ViewFeedbackReport
         Me.Label2.TabIndex = 54
         Me.Label2.Text = "Time:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'sendertext
-        '
-        Me.sendertext.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.sendertext.HeaderText = "Text"
-        Me.sendertext.Name = "sendertext"
-        Me.sendertext.ReadOnly = True
         '
         'ViewFeedbackReport
         '
