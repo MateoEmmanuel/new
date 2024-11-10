@@ -41,15 +41,20 @@ Partial Class addscheduleadmin
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtbuilding = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cbominute = New System.Windows.Forms.ComboBox()
-        Me.cboampm = New System.Windows.Forms.ComboBox()
-        Me.cbohour = New System.Windows.Forms.ComboBox()
+        Me.cbominutein = New System.Windows.Forms.ComboBox()
+        Me.cboampmin = New System.Windows.Forms.ComboBox()
+        Me.cbohourin = New System.Windows.Forms.ComboBox()
         Me.DGVrooms = New System.Windows.Forms.DataGridView()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnback = New System.Windows.Forms.Button()
         Me.btnclear = New System.Windows.Forms.Button()
         Me.btnaddschedule = New System.Windows.Forms.Button()
         Me.btnconfirm = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.cbominuteout = New System.Windows.Forms.ComboBox()
+        Me.cboampmout = New System.Windows.Forms.ComboBox()
+        Me.cbohourout = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -57,6 +62,7 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel6.SuspendLayout()
         CType(Me.DGVrooms, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -77,6 +83,7 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.50832!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.45131!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
         Me.TableLayoutPanel1.TabIndex = 2
         '
@@ -172,9 +179,11 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel4.ColumnCount = 5
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.25134!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.54011!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.63102!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.79679!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.55664!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.7754!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.80749!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.02674!))
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel7, 3, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label2, 2, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.btnadd, 4, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.txtrname, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.txtrcode, 1, 1)
@@ -202,9 +211,9 @@ Partial Class addscheduleadmin
         Me.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnadd.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnadd.ForeColor = System.Drawing.Color.NavajoWhite
-        Me.btnadd.Location = New System.Drawing.Point(670, 3)
+        Me.btnadd.Location = New System.Drawing.Point(675, 3)
         Me.btnadd.Name = "btnadd"
-        Me.btnadd.Size = New System.Drawing.Size(75, 28)
+        Me.btnadd.Size = New System.Drawing.Size(70, 28)
         Me.btnadd.TabIndex = 2
         Me.btnadd.Text = "Add"
         Me.btnadd.UseVisualStyleBackColor = True
@@ -213,27 +222,27 @@ Partial Class addscheduleadmin
         '
         Me.txtrname.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtrname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrname.Location = New System.Drawing.Point(147, 3)
+        Me.txtrname.Location = New System.Drawing.Point(146, 3)
         Me.txtrname.Name = "txtrname"
-        Me.txtrname.Size = New System.Drawing.Size(200, 29)
+        Me.txtrname.Size = New System.Drawing.Size(199, 29)
         Me.txtrname.TabIndex = 0
         '
         'txtrcode
         '
         Me.txtrcode.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtrcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrcode.Location = New System.Drawing.Point(147, 37)
+        Me.txtrcode.Location = New System.Drawing.Point(146, 37)
         Me.txtrcode.Name = "txtrcode"
-        Me.txtrcode.Size = New System.Drawing.Size(200, 29)
+        Me.txtrcode.Size = New System.Drawing.Size(199, 29)
         Me.txtrcode.TabIndex = 1
         '
         'txtrDD
         '
         Me.txtrDD.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtrDD.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtrDD.Location = New System.Drawing.Point(440, 3)
+        Me.txtrDD.Location = New System.Drawing.Point(468, 3)
         Me.txtrDD.Name = "txtrDD"
-        Me.txtrDD.Size = New System.Drawing.Size(172, 29)
+        Me.txtrDD.Size = New System.Drawing.Size(201, 29)
         Me.txtrDD.TabIndex = 4
         '
         'txtcode
@@ -244,7 +253,7 @@ Partial Class addscheduleadmin
         Me.txtcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcode.ForeColor = System.Drawing.Color.NavajoWhite
         Me.txtcode.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.txtcode.Location = New System.Drawing.Point(19, 0)
+        Me.txtcode.Location = New System.Drawing.Point(18, 0)
         Me.txtcode.Name = "txtcode"
         Me.txtcode.Size = New System.Drawing.Size(122, 34)
         Me.txtcode.TabIndex = 8
@@ -259,7 +268,7 @@ Partial Class addscheduleadmin
         Me.txtroom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtroom.ForeColor = System.Drawing.Color.NavajoWhite
         Me.txtroom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.txtroom.Location = New System.Drawing.Point(24, 34)
+        Me.txtroom.Location = New System.Drawing.Point(23, 34)
         Me.txtroom.Name = "txtroom"
         Me.txtroom.Size = New System.Drawing.Size(117, 31)
         Me.txtroom.TabIndex = 9
@@ -274,7 +283,7 @@ Partial Class addscheduleadmin
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.NavajoWhite
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label4.Location = New System.Drawing.Point(7, 65)
+        Me.Label4.Location = New System.Drawing.Point(6, 65)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(134, 31)
         Me.Label4.TabIndex = 10
@@ -285,9 +294,9 @@ Partial Class addscheduleadmin
         '
         Me.cboDD.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboDD.FormattingEnabled = True
-        Me.cboDD.Location = New System.Drawing.Point(353, 3)
+        Me.cboDD.Location = New System.Drawing.Point(351, 3)
         Me.cboDD.Name = "cboDD"
-        Me.cboDD.Size = New System.Drawing.Size(81, 21)
+        Me.cboDD.Size = New System.Drawing.Size(111, 21)
         Me.cboDD.TabIndex = 15
         '
         'Label8
@@ -298,68 +307,71 @@ Partial Class addscheduleadmin
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.NavajoWhite
         Me.Label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label8.Location = New System.Drawing.Point(376, 34)
+        Me.Label8.Location = New System.Drawing.Point(381, 34)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(58, 31)
+        Me.Label8.Size = New System.Drawing.Size(81, 31)
         Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Time:"
+        Me.Label8.Text = "Time IN:"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'txtbuilding
         '
         Me.txtbuilding.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtbuilding.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbuilding.Location = New System.Drawing.Point(147, 68)
+        Me.txtbuilding.Location = New System.Drawing.Point(146, 68)
         Me.txtbuilding.Name = "txtbuilding"
-        Me.txtbuilding.Size = New System.Drawing.Size(200, 29)
+        Me.txtbuilding.Size = New System.Drawing.Size(199, 29)
         Me.txtbuilding.TabIndex = 2
         '
         'TableLayoutPanel6
         '
+        Me.TableLayoutPanel6.AutoSize = True
+        Me.TableLayoutPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.TableLayoutPanel6.ColumnCount = 3
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel6.Controls.Add(Me.cbominute, 1, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.cboampm, 2, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.cbohour, 0, 0)
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(440, 37)
+        Me.TableLayoutPanel6.Controls.Add(Me.cbominutein, 1, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.cboampmin, 2, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.cbohourin, 0, 0)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(468, 37)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(172, 25)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(201, 25)
         Me.TableLayoutPanel6.TabIndex = 16
         '
-        'cbominute
+        'cbominutein
         '
-        Me.cbominute.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cbominute.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbominute.FormattingEnabled = True
-        Me.cbominute.Location = New System.Drawing.Point(60, 3)
-        Me.cbominute.Name = "cbominute"
-        Me.cbominute.Size = New System.Drawing.Size(51, 21)
-        Me.cbominute.TabIndex = 1
+        Me.cbominutein.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbominutein.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbominutein.FormattingEnabled = True
+        Me.cbominutein.Location = New System.Drawing.Point(70, 3)
+        Me.cbominutein.Name = "cbominutein"
+        Me.cbominutein.Size = New System.Drawing.Size(61, 21)
+        Me.cbominutein.TabIndex = 1
         '
-        'cboampm
+        'cboampmin
         '
-        Me.cboampm.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cboampm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboampm.FormattingEnabled = True
-        Me.cboampm.Location = New System.Drawing.Point(117, 3)
-        Me.cboampm.Name = "cboampm"
-        Me.cboampm.Size = New System.Drawing.Size(52, 21)
-        Me.cboampm.TabIndex = 2
+        Me.cboampmin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboampmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboampmin.FormattingEnabled = True
+        Me.cboampmin.Location = New System.Drawing.Point(137, 3)
+        Me.cboampmin.Name = "cboampmin"
+        Me.cboampmin.Size = New System.Drawing.Size(61, 21)
+        Me.cboampmin.TabIndex = 2
         '
-        'cbohour
+        'cbohourin
         '
-        Me.cbohour.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cbohour.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbohour.FormattingEnabled = True
-        Me.cbohour.Location = New System.Drawing.Point(3, 3)
-        Me.cbohour.Name = "cbohour"
-        Me.cbohour.Size = New System.Drawing.Size(51, 21)
-        Me.cbohour.TabIndex = 17
+        Me.cbohourin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbohourin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbohourin.FormattingEnabled = True
+        Me.cbohourin.Location = New System.Drawing.Point(3, 3)
+        Me.cbohourin.Name = "cbohourin"
+        Me.cbohourin.Size = New System.Drawing.Size(61, 21)
+        Me.cbohourin.TabIndex = 17
         '
         'DGVrooms
         '
@@ -443,6 +455,71 @@ Partial Class addscheduleadmin
         Me.btnconfirm.Text = "Confirm"
         Me.btnconfirm.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label2.Location = New System.Drawing.Point(359, 65)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(103, 31)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Time OUT:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.AutoSize = True
+        Me.TableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.TableLayoutPanel7.ColumnCount = 3
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.Controls.Add(Me.cbominuteout, 1, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.cboampmout, 2, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.cbohourout, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(468, 68)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 1
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(201, 25)
+        Me.TableLayoutPanel7.TabIndex = 17
+        '
+        'cbominuteout
+        '
+        Me.cbominuteout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbominuteout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbominuteout.FormattingEnabled = True
+        Me.cbominuteout.Location = New System.Drawing.Point(70, 3)
+        Me.cbominuteout.Name = "cbominuteout"
+        Me.cbominuteout.Size = New System.Drawing.Size(61, 21)
+        Me.cbominuteout.TabIndex = 1
+        '
+        'cboampmout
+        '
+        Me.cboampmout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboampmout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboampmout.FormattingEnabled = True
+        Me.cboampmout.Location = New System.Drawing.Point(137, 3)
+        Me.cboampmout.Name = "cboampmout"
+        Me.cboampmout.Size = New System.Drawing.Size(61, 21)
+        Me.cboampmout.TabIndex = 2
+        '
+        'cbohourout
+        '
+        Me.cbohourout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbohourout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbohourout.FormattingEnabled = True
+        Me.cbohourout.Location = New System.Drawing.Point(3, 3)
+        Me.cbohourout.Name = "cbohourout"
+        Me.cbohourout.Size = New System.Drawing.Size(61, 21)
+        Me.cbohourout.TabIndex = 17
+        '
         'addscheduleadmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -466,6 +543,7 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel6.ResumeLayout(False)
         CType(Me.DGVrooms, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel7.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -495,7 +573,12 @@ Partial Class addscheduleadmin
     Friend WithEvents btnconfirm As Button
     Friend WithEvents cboDD As ComboBox
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
-    Friend WithEvents cbominute As ComboBox
-    Friend WithEvents cboampm As ComboBox
-    Friend WithEvents cbohour As ComboBox
+    Friend WithEvents cbominutein As ComboBox
+    Friend WithEvents cboampmin As ComboBox
+    Friend WithEvents cbohourin As ComboBox
+    Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
+    Friend WithEvents cbominuteout As ComboBox
+    Friend WithEvents cboampmout As ComboBox
+    Friend WithEvents cbohourout As ComboBox
+    Friend WithEvents Label2 As Label
 End Class

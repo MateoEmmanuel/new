@@ -15,26 +15,28 @@ Public Class requestapproval
         Dim result As DialogResult = MessageBox.Show("Are you sure to add a new schedule?", "Confirm Creation of New Schedule?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         If result = DialogResult.Yes Then
-            ' If a row is selected in the schedules DataGridView
+            ' Check if a row is selected in the DGVrequest DataGridView
             If DGVrequest.SelectedRows.Count > 0 Then
                 Dim selectedRow As DataGridViewRow = DGVrequest.SelectedRows(0)
 
-                ' Create an instance of the add schedule form and pass selected data
+                ' Create an instance of the add schedule form
                 Dim addForm As New addscheduleadmin()
-                addForm.rDate = selectedRow.Cells("Date").Value.ToString()
-                addForm.rTime = selectedRow.Cells("Time").Value.ToString()
-                addForm.rRoom = selectedRow.Cells("Room").Value.ToString()
 
-                ' Show the add schedule form
+                ' Transfer the requestID to the add schedule form
+                addForm.requestID = selectedRow.Cells("requestID").Value.ToString()
+
+                ' Show the add schedule form with data from the selected row
                 addForm.ShowDialog()
                 Me.Hide()
             Else
-                ' Show add schedule form without selecting a row
-                addscheduleadmin.Show()
+                ' Create and show the add schedule form without transferring any data
+                Dim addForm As New addscheduleadmin()
+                addForm.ShowDialog()
                 Me.Hide()
             End If
         End If
     End Sub
+
 
     Private Sub btndelete_Click(sender As Object, e As EventArgs) Handles btndelete.Click
         If DGVrequest.SelectedRows.Count > 0 Then
