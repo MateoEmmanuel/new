@@ -30,6 +30,11 @@ Partial Class addscheduleadmin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbosearch = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.cbominuteout = New System.Windows.Forms.ComboBox()
+        Me.cboampmout = New System.Windows.Forms.ComboBox()
+        Me.cbohourout = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnadd = New System.Windows.Forms.Button()
         Me.txtrname = New System.Windows.Forms.TextBox()
         Me.txtrcode = New System.Windows.Forms.TextBox()
@@ -59,6 +64,7 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         CType(Me.DGVrooms, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
@@ -204,6 +210,71 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25!))
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(748, 96)
         Me.TableLayoutPanel4.TabIndex = 1
+        '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.AutoSize = True
+        Me.TableLayoutPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.TableLayoutPanel7.ColumnCount = 3
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel7.Controls.Add(Me.cbominuteout, 1, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.cboampmout, 2, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.cbohourout, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(468, 68)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 1
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(201, 25)
+        Me.TableLayoutPanel7.TabIndex = 17
+        '
+        'cbominuteout
+        '
+        Me.cbominuteout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbominuteout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbominuteout.FormattingEnabled = True
+        Me.cbominuteout.Location = New System.Drawing.Point(70, 3)
+        Me.cbominuteout.Name = "cbominuteout"
+        Me.cbominuteout.Size = New System.Drawing.Size(61, 21)
+        Me.cbominuteout.TabIndex = 1
+        '
+        'cboampmout
+        '
+        Me.cboampmout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboampmout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboampmout.FormattingEnabled = True
+        Me.cboampmout.Location = New System.Drawing.Point(137, 3)
+        Me.cboampmout.Name = "cboampmout"
+        Me.cboampmout.Size = New System.Drawing.Size(61, 21)
+        Me.cboampmout.TabIndex = 2
+        '
+        'cbohourout
+        '
+        Me.cbohourout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbohourout.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbohourout.FormattingEnabled = True
+        Me.cbohourout.Location = New System.Drawing.Point(3, 3)
+        Me.cbohourout.Name = "cbohourout"
+        Me.cbohourout.Size = New System.Drawing.Size(61, 21)
+        Me.cbohourout.TabIndex = 17
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.NavajoWhite
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label2.Location = New System.Drawing.Point(359, 65)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(103, 31)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Time OUT:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'btnadd
         '
@@ -540,6 +611,7 @@ Partial Class addscheduleadmin
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
+        Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel6.ResumeLayout(False)
         CType(Me.DGVrooms, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
